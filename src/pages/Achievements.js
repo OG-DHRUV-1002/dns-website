@@ -1,7 +1,5 @@
 // src/pages/Achievements.js
 import React from 'react';
-import achievement1 from '../assets/images/achievement1.png'; // Add your event photos
-import achievement2 from '../assets/images/achievement2.png';
 
 const Achievements = () => {
   return (
