@@ -1,0 +1,396 @@
+/* General Body Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* This is key for vertical alignment */
+  padding: 0 2.5rem;
+  background-color: #285A00; /* Green background */
+  color: white; /* White text */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+/* Add this new rule */
+.navbar-left {
+  display: flex;
+  align-items: center; /* This vertically centers the logo and title */
+  gap: 1rem; /* Adds space between the logo and the title */
+}
+
+.navbar-logo {
+  height: 50px;
+}
+
+.navbar-title {
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: bold;
+}
+
+/* --- DESKTOP NAVIGATION (Visible on PC) --- */
+.nav-links {
+  display: flex; /* This makes the links horizontal */
+  flex-direction: row; /* Explicitly set direction */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  opacity: 0.8;
+}
+
+/* Page Container */
+.page-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  min-height: 60vh;
+}
+
+.page-container h1, .page-container h2 {
+    color: #0056b3;
+}
+
+/* --- PARALLAX HERO SECTION (HOMEPAGE) --- */
+
+/* This is the main container for the hero section */
+.hero-parallax-banner {
+  position: relative; /* Establishes a positioning context */
+  color: white;
+  text-align: center;
+  height: calc(100vh - 80px); /* Set the height to 100% of the viewport height /
+top: 80px; / Push it down below the navbar /
+margin-top: -80px; / Pull it up to fill the space visually */
+}
+
+/* This is a more specific selector to target the div created by the library.
+  It ensures our background rules are applied correctly.
+*/
+.hero-parallax-banner > div > div[style*="background-image"] {
+  /* This ensures the image always covers the area and is centered */
+  background-position: center center !important;
+  background-size: contain !important;
+}
+
+/* This is the content layer that sits on top of the image */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute; /* Takes it out of normal flow to overlay on the image */
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+  padding: 1rem;
+  z-index: 2; /* Ensures it's on top of the background image */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  font-weight: 400;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-btn {
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.hero-btn.primary {
+  background-color: #28a745;
+  color: white;
+}
+
+.hero-btn.secondary {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+
+/* Event Card */
+.event-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.event-card h3 {
+    color: #28a745;
+}
+.event-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Add this at the end of your CSS file */
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 1rem;
+  margin-right: 1rem; /* Adds space between buttons */
+  background-color: #25D366; /* Official WhatsApp Green */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px; /* Pill shape */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+.whatsapp-button:hover {
+  background-color: #00BB00; /* Darker green on hover */
+}
+
+
+/* Email Button Styling */
+.email-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 1rem;
+  margin-right: 1rem; /* Adds space between buttons */
+  background-color: #D44638; /* A common, recognizable color for email */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+.email-button:hover {
+  background-color: #FF2200;
+}
+
+/* LinkedIn Button Styling */
+.linkedin-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 1rem;
+  background-color: #0A66C2; /* Official LinkedIn Blue */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+.linkedin-button:hover {
+  background-color: #0033FF;
+}
+
+
+/* Achievements Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 0.001rem;
+  background-color: #333;
+  color: white;
+}
+
+
+
+
+
+/* --- RESPONSIVE DESIGN FOR MOBILE & TABLETS --- */
+@media (max-width: 768px) {
+
+  /* --- NAVIGATION BAR --- */
+  .navbar {
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
+
+  /* Hides the text links and just shows the title */
+  .nav-links {
+    display: none; 
+    /* NOTE: A real mobile site would have a hamburger menu icon here */
+  }
+
+  .navbar-title {
+    font-size: 1rem; /* Make navbar title smaller */
+    margin-left: 0.5rem;
+  }
+
+/* --- HERO SECTION FIX FOR MOBILE --- */
+  .hero-parallax-banner {
+    /* This forces the hero section to fill the entire screen height
+       below the 80px navbar on mobile devices. */
+    height: calc(100vh - 80px); 
+    min-height: 500px; /* A fallback for browsers that have issues with vh */
+  }
+
+  /* --- HOME PAGE CONTENT FIX --- */
+  /* This ensures the content below the hero appears correctly */
+  .home-content-section {
+    padding-top: 3rem; /* Adds some space above the "Our Mission" title */
+    background-color: #f8f9fa; /* Ensures it has a solid background */
+    position: relative; /* Keeps it in the normal document flow */
+    z-index: 5; /* Ensures it's not hidden behind the parallax */
+  }
+
+  /* --- ACTIVITY GRID (5-Point Layout) --- */
+  .activities-grid {
+    /* Change to a single column layout */
+    grid-template-columns: 1fr; 
+  }
+
+  /* Reset the specific grid placements for all cards */
+  .activity-card:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* --- GENERAL CONTENT --- */
+  .page-container {
+    padding: 0 1rem; /* Reduce side padding on content pages */
+  }
+
+  /* --- ACTION BUTTONS --- */
+  .action-button {
+    display: block; /* Make each button take the full width */
+    margin-right: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+/* --- MOBILE HAMBURGER & DROPDOWN (Hidden on PC) --- */
+.hamburger-menu {
+  display: none; /* Hidden on desktop */
+}
+
+.mobile-nav-links {
+  display: none; /* Hidden on desktop */
+}
+
+/* --- MEDIA QUERY FOR MOBILE VIEW --- */
+/* Styles inside here only apply to screens 768px or smaller */
+@media (max-width: 768px) {
+  
+  /* Hide the desktop links on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  /* Show the hamburger icon on mobile */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  .hamburger-line {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  /* Style the mobile dropdown menu */
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .mobile-nav-links li a {
+    display: block;
+    padding: 1.2rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .mobile-nav-links li a.active,
+  .mobile-nav-links li a:hover {
+    background-color: #f0f0f0;
+    color: #28a745;
+  }
+}
