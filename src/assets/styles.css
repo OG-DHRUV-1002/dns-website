@@ -237,17 +237,18 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 
-/* Achievements Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+/* Add this style for the "In Progress" notice on the Achievements page */
+.in-progress-notice {
+  background-color: #f0fff0; /* Light green background */
+  border-left: 5px solid #28a745; /* Green accent border */
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 0 8px 8px 0;
 }
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+
+.in-progress-notice h2 {
+  color: #28a745; /* Green to match your theme */
+  margin-top: 0;
 }
 
 /* Footer */
