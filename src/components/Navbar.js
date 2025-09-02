@@ -16,10 +16,12 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-left">
+      {/* --- START OF CHANGES --- */}
+      <NavLink to="/" className="navbar-left" onClick={handleLinkClick}>
         <img src="/images/logo.png" alt="DNS Logo" className="navbar-logo" />
         <div className="navbar-title">Neelvardhan Community</div>
-      </div>
+      </NavLink>
+      {/* --- END OF CHANGES --- */}
 
       {/* Hamburger Menu Icon (only for mobile) */}
       <div className="hamburger-menu" onClick={toggleMenu}>
