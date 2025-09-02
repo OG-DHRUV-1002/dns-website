@@ -1,3 +1,4 @@
+// src/components/EmailButton.js
 import React from 'react';
 
 const EmailButton = () => {
@@ -5,8 +6,8 @@ const EmailButton = () => {
   const subject = "Inquiry about Neelvardhan";
 
   return (
-    <a href={`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}`} className="email-button">
-      📧 Email
+    <a href={`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}`} className="email-button google-border-button">
+      <span className="button-text">📧 Email</span>
     </a>
   );
 };
