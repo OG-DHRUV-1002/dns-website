@@ -6,7 +6,7 @@ const LinkedInButton = () => {
 
   return (
     <a href={linkedInProfileUrl} target="_blank" rel="noopener noreferrer" className="linkedin-button">
-      Follow us on LinkedIn
+      ℹ️ LinkedIn
     </a>
   );
 };
