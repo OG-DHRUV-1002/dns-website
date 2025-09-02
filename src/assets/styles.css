@@ -237,6 +237,47 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 
+/* X Button Styling */
+.x-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 1rem;
+  margin-right: 1rem; /* Adds space between buttons */
+  background-color: #000000; /* Official X Black */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+.x-button:hover {
+  background-color: #333333; /* A slightly lighter black for hover */
+}
+
+/* Instagram Button Styling */
+.instagram-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 1rem;
+  /* Official Instagram Gradient */
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: filter 0.3s ease; /* Use filter for a smooth brightness transition on gradient */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+.instagram-button:hover {
+  filter: brightness(1.15); /* Makes the gradient slightly brighter on hover */
+}
+
+
 /* Add this style for the "In Progress" notice on the Achievements page */
 .in-progress-notice {
   background-color: #f0fff0; /* Light green background */
