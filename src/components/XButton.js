@@ -1,5 +1,5 @@
 import React from 'react';
-import './SocialButtons.css'; // Use a shared CSS file for styling
+import './style.css'; // Use a shared CSS file for styling
 
 const XButton = () => {
   // Replace with your club's actual X profile URL
