@@ -6,7 +6,7 @@ const EmailButton = () => {
 
   return (
     <a href={`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}`} className="email-button">
-      Contact Us via Email
+      📧 Email
     </a>
   );
 };
