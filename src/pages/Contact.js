@@ -17,13 +17,14 @@ const Contact = () => {
         <li>Choose an upcoming event and sign up through the provided link!</li></h3>
       </ol>      
         <WhatsAppButton />
-        <LinkedInButton />
+        
 
 
       <h1>Connect With Us:</h1>
       <h3><p>For partnerships, queries, or suggestions, please contact us at:</p></h3>
 	<div>
         <EmailButton />
+<LinkedInButton />
       </div>
     </div>
   );
