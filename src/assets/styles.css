@@ -227,6 +227,7 @@ margin-top: -80px; / Pull it up to fill the space visually */
   display: inline-block;
   padding: 12px 24px;
   margin-top: 1rem;
+  margin-right: 1rem;
   background-color: #0A66C2; /* Official LinkedIn Blue */
   color: white;
   text-decoration: none;
