@@ -197,26 +197,76 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 
-/* Email Button Styling - Smooth 4-Color Google Gradient */
-.email-button {
-  display: inline-block;
+/* Email Button Styling - Google Border Format */
+.google-border-button {
+  position: relative; /* Needed for pseudo-element positioning */
+  display: inline-flex; /* Use flex to center content */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
   padding: 12px 24px;
   margin-top: 1rem;
   margin-right: 1rem;
-  /* A smoother, more professional 4-color gradient */
-  background: linear-gradient(135deg, #4285F4 0%, #EA4335 45%, #FBBC05 75%, #34A853 100%);
-  color: white;
+  background-color: #FFFFFF; /* White background for the button itself */
+  color: #333333; /* Darker text color against white background */
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
-  border-radius: 25px;
-  transition: filter 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+  border-radius: 25px; /* Adjust as needed for the oval shape */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Softer shadow for a subtle lift */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden; /* Important for border effect */
+  border: none; /* Remove default border */
+  cursor: pointer;
 }
 
-.email-button:hover {
-  filter: brightness(1.1);
+.google-border-button:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25); /* More pronounced shadow on hover */
 }
+
+/* Pseudo-element for the gradient border */
+.google-border-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 25px; /* Must match the button's border-radius */
+  padding: 2px; /* Controls the thickness of the border */
+  background: linear-gradient(
+    45deg,
+    #4285F4, /* Blue */
+    #EA4335, /* Red */
+    #FBBC05, /* Yellow */
+    #34A853  /* Green */
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none; /* Allows clicks to pass through to the button */
+}
+
+/* Optional: Styling for the text inside the button */
+.google-border-button .button-text {
+  position: relative; /* Ensure text stays above the border effect */
+  z-index: 1; /* Keep text on top */
+}
+
+/* You might also want to adjust your .social-buttons-container gap if you're using it */
+.social-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* Adjust this to control spacing between buttons */
+  margin-top: 1rem;
+}
+
 
 .email-button:hover {
   filter: brightness(1.15);
