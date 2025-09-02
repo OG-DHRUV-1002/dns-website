@@ -204,8 +204,7 @@ margin-top: -80px; / Pull it up to fill the space visually */
   margin-top: 1rem;
   margin-right: 1rem;
   /* Gmail-inspired gradient */
-  background: linear-gradient(45deg, #4285F4 0%, #DB4437 33%, #F4B400 66%, #0F9D58 100%);
-  color: white;
+  background: linear-gradient(45deg, #4285F4, #EA4335);  color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
