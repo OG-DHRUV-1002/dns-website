@@ -2,7 +2,7 @@
 import React from 'react';
 
 const WhatsAppButton = () => {
-  const whatsappLink = "https://chat.whatsapp.com/LFnYaFlFw3gKxnVfR9yS0P";
+  const whatsappLink = "https://forms.gle/QP95Kq8PDMNx6TLVA";
 
   return (
     <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="whatsapp-button">
