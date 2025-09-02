@@ -1,15 +1,16 @@
+// Filename MUST be InstagramButton.js
 import React from 'react';
-import './style.css'; // Use the same shared CSS file
+import './style.css'; // Assuming style.css is your main stylesheet
 
 const InstagramButton = () => {
-  // Replace with your club's actual Instagram profile URL
-  const instagramProfileUrl = 'https://www.instagram.com/YourClubHandle';
+  // Replace with your club's official Instagram profile URL
+  const instagramLink = "https://instagram.com/YourClubHandle";
 
   return (
-    <a href={instagramProfileUrl} target="_blank" rel="noopener noreferrer" className="social-button instagram-button">
+    <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="instagram-button">
       Follow on Instagram
     </a>
   );
 };
 
-export default InstagramButton;
+export default InstagramButton; // Make sure this line exists
