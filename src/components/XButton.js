@@ -3,7 +3,7 @@ import React from 'react';
 
 const XButton = () => {
   // Replace with your club's official X profile URL
-  const xLink = "https://twitter.com/YourClubHandle";
+  const xLink = "https://x.com/NeelvardhanClub";
 
   return (
     <a href={xLink} target="_blank" rel="noopener noreferrer" className="x-button">
