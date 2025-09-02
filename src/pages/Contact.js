@@ -26,7 +26,9 @@ const Contact = () => {
       <h3><p>For partnerships, queries, or suggestions, please contact us at:</p></h3>
 	<div>
         <EmailButton />
-<LinkedInButton />
+		<LinkedInButton />
+	  	<XButton /> 
+        <InstagramButton /> 
       </div>
     </div>
   );
