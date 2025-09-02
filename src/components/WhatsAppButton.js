@@ -6,7 +6,7 @@ const WhatsAppButton = () => {
 
   return (
     <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="whatsapp-button">
-      Join our WhatsApp Community
+      📣 Register Here !!
     </a>
   );
 };
