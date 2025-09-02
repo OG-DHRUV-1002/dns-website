@@ -197,20 +197,25 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 
-/* Email Button Styling */
+/* Email Button Styling - Smooth 4-Color Google Gradient */
 .email-button {
   display: inline-block;
   padding: 12px 24px;
   margin-top: 1rem;
   margin-right: 1rem;
-  /* Gmail-inspired gradient */
-  background: linear-gradient(45deg, #4285F4, #EA4335);  color: white;
+  /* A smoother, more professional 4-color gradient */
+  background: linear-gradient(135deg, #4285F4 0%, #EA4335 45%, #FBBC05 75%, #34A853 100%);
+  color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
   border-radius: 25px;
   transition: filter 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+.email-button:hover {
+  filter: brightness(1.1);
 }
 
 .email-button:hover {
