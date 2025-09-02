@@ -203,7 +203,7 @@ margin-top: -80px; / Pull it up to fill the space visually */
   padding: 12px 24px;
   margin-top: 1rem;
   margin-right: 1rem; /* Adds space between buttons */
-  background-color: #D44638; /* A common, recognizable color for email */
+  background-color: linear-gradient(45deg, #4285F4, #DB4437, #F4B400, #0F9D58);
   color: white;
   text-decoration: none;
   font-weight: bold;
