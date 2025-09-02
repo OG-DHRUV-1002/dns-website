@@ -3,6 +3,8 @@ import React from 'react';
 import WhatsAppButton from '../components/WhatsAppButton';
 import EmailButton from '../components/EmailButton'; // <-- Import EmailButton
 import LinkedInButton from '../components/LinkedInButton'; // <-- Import LinkedInButton
+import XButton from '../components/XButton'; // <-- Import XButton
+import InstagramButton from '../components/InstagramButton'; // <-- Import InstagramButton
 
 const Contact = () => {
   return (
