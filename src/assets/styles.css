@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
   align-items: center; /* This is key for vertical alignment */
   padding: 0 2.5rem;
-  background-color: #75C908; /* Green background */
+  background-color: #77B816; /* Green background */
   color: white; /* White text */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
