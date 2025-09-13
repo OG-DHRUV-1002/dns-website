@@ -18,8 +18,8 @@ const UpcomingEvents = () => {
       date: 'Sunday, October 12, 2025',
       description: 'We are teaming up with WWF-India to plant 100 native saplings. Let\'s make our city greener, one tree at a time!',
       link: 'https://www.connectfor.org/' // Replace with actual event link
-    }
-  ];*/
+    }*/
+  ];
 
   return (
     <div className="page-container">
