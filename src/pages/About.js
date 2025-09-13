@@ -1,5 +1,6 @@
 // src/pages/About.js
 import React from 'react';
+import FloatingRegisterButton from '../components/FloatingRegisterButton'; // <-- 1. Import the new component
 
 const About = () => {
   return (
@@ -34,6 +35,7 @@ const About = () => {
         <li><strong>Passion:</strong> Our drive comes from a genuine dedication to protecting our planet.</li>
         <li><strong>Growth:</strong> We are committed to developing the skills and credibility of every member.</li>
       </ul>
+  <FloatingRegisterButton /> 
     </div>
   );
 };
