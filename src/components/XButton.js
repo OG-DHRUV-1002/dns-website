@@ -7,7 +7,7 @@ const XButton = () => {
 
   return (
     <a href={xLink} target="_blank" rel="noopener noreferrer" className="x-button">
-      𝕏 X(Twitter)
+      𝕏 (Twitter)
     </a>
   );
 };
