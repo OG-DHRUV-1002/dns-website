@@ -16,12 +16,16 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      {/* --- START OF CHANGES --- */}
-      <NavLink to="/" className="navbar-left" onClick={handleLinkClick}>
-        <img src="/images/logo.png" alt="DNS Logo" className="navbar-logo" />
+      <div className="navbar-left">
+        {/* --- START OF CHANGES --- */}
+        {/* Only the logo is a clickable link now */}
+        <NavLink to="/" onClick={handleLinkClick}>
+          <img src="/images/logo.png" alt="DNS Logo" className="navbar-logo" />
+        </NavLink>
+        {/* The title is now just plain text */}
         <div className="navbar-title">Neelvardhan Community</div>
-      </NavLink>
-      {/* --- END OF CHANGES --- */}
+        {/* --- END OF CHANGES --- */}
+      </div>
 
       {/* Hamburger Menu Icon (only for mobile) */}
       <div className="hamburger-menu" onClick={toggleMenu}>
