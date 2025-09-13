@@ -51,7 +51,7 @@ const UpcomingEvents = () => {
 
   return (
     <div className="page-container">
-      <h1>Upcoming Events</h1>
+      <h1 style={{color: '#5E9211' }}>Upcoming Events</h1>
       <p>Here are the opportunities where you can join us to make an impact. Click on an event to see more details.</p>
       <div className="events-list"> {/* A container for the list */}
         {events.map((event, index) => (
