@@ -1,5 +1,5 @@
 // src/pages/UpcomingEvents.js
-import React from 'react';
+import React, { useState } from 'react'; // <-- IMPORT useState HERE
 import EventCard from '../components/EventCard';
 
 const UpcomingEvents = () => {
