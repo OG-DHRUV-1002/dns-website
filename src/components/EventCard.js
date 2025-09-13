@@ -34,7 +34,7 @@ const EventCard = ({ event, isExpanded, onHeaderClick }) => {
           <div className="event-toggle-icon expanded">▲</div>
           <p><strong>🫱🏼‍🫲🏼 In partnership with:</strong> {event.ngo}</p>
           <p><strong>📍 Location:</strong> {event.location}</p>
-          <p>💁🏻 {event.description}</p>
+          <p><strong>💁🏻 Description:</strong> {event.description}</p>
         </div>
       )}
        {/* Show the down arrow only when collapsed */}
