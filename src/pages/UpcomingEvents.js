@@ -3,6 +3,8 @@ import React from 'react';
 import EventCard from '../components/EventCard';
 
 const UpcomingEvents = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null); // State to track expanded card
+
   // This data can be fetched from a server in the future
   const events = [
     {
@@ -40,14 +42,27 @@ const UpcomingEvents = () => {
       link: 'https://www.connectfor.org/' // Replace with actual event link
     }*/
   ];
+  
+// Function to handle clicking on an event card
+  const handleCardClick = (index) => {
+    // If the clicked card is already open, close it. Otherwise, open it.
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <div className="page-container">
       <h1>Upcoming Events</h1>
-      <p>Here are the opportunities where you can join us to make an impact. Sign up and be a part of the change!</p>
-      {events.map((event, index) => (
-        <EventCard key={index} event={event} />
-      ))}
+      <p>Here are the opportunities where you can join us to make an impact. Click on an event to see more details.</p>
+      <div className="events-list"> {/* A container for the list */}
+        {events.map((event, index) => (
+          <EventCard 
+            key={index} 
+            event={event}
+            isExpanded={expandedIndex === index} // Pass down if it's expanded
+            onHeaderClick={() => handleCardClick(index)} // Pass down the click handler
+          />
+        ))}
+      </div>
     </div>
   );
 };
