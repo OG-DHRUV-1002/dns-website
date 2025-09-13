@@ -12,7 +12,8 @@ const EventCard = ({ event, isExpanded, onHeaderClick }) => {
       <div className="event-card-header" onClick={onHeaderClick}>
         <div className="event-summary">
           <h3>{event.title}</h3>
-          <p><strong>📅 Date:</strong> {event.date} | <strong>🕖 Time:</strong> {event.time}</p>
+          <p><strong>📅 Date:</strong> {event.date}</p>
+          <p><strong>🕖 Time:</strong> {event.time}</p>
         </div>
         
         {/* The "Sign Up" button is now part of the header */}
