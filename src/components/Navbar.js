@@ -1,30 +1,42 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Function to close menu when a link is clicked
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
 
+  // --- NEW FUNCTION FOR UPCOMING EVENTS LINK ---
+  const handleUpcomingEventsClick = (e) => {
+    e.preventDefault(); // Prevent default NavLink navigation
+    setIsMenuOpen(false); // Close mobile menu if open
+
+    const confirmNavigation = window.confirm(
+      "Important: Before signing up for events, please ensure you are logged into your ConnectFor account. \n\n" +
+      "Click 'OK' to proceed to the Upcoming Events page where you can find the 'Sign Up Here' links. Otherwise, click 'Cancel'."
+    );
+
+    if (confirmNavigation) {
+      navigate('/upcoming-events'); // Navigate if user confirms
+    }
+  };
+  // --- END NEW FUNCTION ---
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        {/* --- START OF CHANGES --- */}
-        {/* Only the logo is a clickable link now */}
         <NavLink to="/" onClick={handleLinkClick}>
           <img src="/images/logo.png" alt="DNS Logo" className="navbar-logo" />
         </NavLink>
-        {/* The title is now just plain text */}
         <div className="navbar-title">Neelvardhan Community</div>
-        {/* --- END OF CHANGES --- */}
       </div>
 
       {/* Hamburger Menu Icon (only for mobile) */}
@@ -36,11 +48,12 @@ const Navbar = () => {
 
       {/* Desktop Navigation Links */}
       <ul className="nav-links">
-        <li><NavLink to="/" end>Home</NavLink></li>
-        <li><NavLink to="/about">About Us</NavLink></li>
-        <li><NavLink to="/upcoming-events">Upcoming Events</NavLink></li>
-        <li><NavLink to="/achievements">Achievements</NavLink></li>
-        <li><NavLink to="/contact">Contact</NavLink></li>
+        <li><NavLink to="/" end onClick={handleLinkClick}>Home</NavLink></li>
+        <li><NavLink to="/about" onClick={handleLinkClick}>About Us</NavLink></li>
+        {/* --- APPLY NEW onClick HANDLER HERE --- */}
+        <li><NavLink to="/upcoming-events" onClick={handleUpcomingEventsClick}>Upcoming Events</NavLink></li>
+        <li><NavLink to="/achievements" onClick={handleLinkClick}>Achievements</NavLink></li>
+        <li><NavLink to="/contact" onClick={handleLinkClick}>Contact</NavLink></li>
       </ul>
 
       {/* Mobile Menu Dropdown (only shows when isMenuOpen is true) */}
@@ -48,7 +61,10 @@ const Navbar = () => {
         <ul className="mobile-nav-links">
           <li onClick={handleLinkClick}><NavLink to="/" end>Home</NavLink></li>
           <li onClick={handleLinkClick}><NavLink to="/about">About Us</NavLink></li>
-          <li onClick={handleLinkClick}><NavLink to="/upcoming-events">Upcoming Events</NavLink></li>
+          {/* --- APPLY NEW onClick HANDLER HERE --- */}
+          <li onClick={() => handleUpcomingEventsClick({ preventDefault: () => {} })}>
+            <NavLink to="/upcoming-events">Upcoming Events</NavLink>
+          </li>
           <li onClick={handleLinkClick}><NavLink to="/achievements">Achievements</NavLink></li>
           <li onClick={handleLinkClick}><NavLink to="/contact">Contact</NavLink></li>
         </ul>
