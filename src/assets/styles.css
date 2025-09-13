@@ -91,6 +91,29 @@ margin-top: -80px; / Pull it up to fill the space visually */
   background-size: contain !important;
 }
 
+/* --- Neelvardhan Text Animation --- */
+
+.hero-title-neelvardhan {
+  /* You can adjust these base styles if needed */
+  font-size: 4rem; /* Example size */
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  
+  /* This line applies the animation */
+  animation: neelvardhanGlow 2.5s infinite alternate ease-in-out;
+}
+
+/* This block defines the glowing animation */
+@keyframes neelvardhanGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4), 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
 /* This is the content layer that sits on top of the image */
 .hero-content {
   display: flex;
