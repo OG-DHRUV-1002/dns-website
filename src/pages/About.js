@@ -13,22 +13,22 @@ const About = () => {
       
       <hr style={{ margin: '2rem 0' }} />
 
-      <h2>Our Mission</h2>
+      <h2 style={{color: '#5E9211' }}>Our Mission</h2>
       <p>
         To forge a powerful link between passionate young volunteers and impactful environmental action. We collaborate with reputed NGOs to execute high-impact projects—from restoring coastlines to reforesting our communities—while ensuring our members receive the certified recognition they deserve for their dedicated service.
       </p>
 
-      <h2>Our Vision</h2>
+      <h2 style={{color: '#5E9211' }}>Our Vision</h2>
       <p>
         We envision a future where youth are at the forefront of the environmental movement. A world where every young person is empowered with the experience, network, and passion to lead and innovate, creating a sustainable and thriving planet for all.
       </p>
 
-      <h2>Our Approach</h2>
+      <h2 style={{color: '#5E9211' }}>Our Approach</h2>
       <p>
         Neelvardhan operates as a strategic bridge. We identify meaningful volunteering opportunities with established organizations, allowing our members to contribute to proven, effective conservation efforts. This model ensures that our collective energy creates measurable results while fostering the professional growth of our volunteers.
       </p>
 
-      <h2>Our Core Values</h2>
+      <h2 style={{color: '#5E9211' }}>Our Core Values</h2>
       <ul>
         <li><strong>Action & Impact:</strong> We believe in hands-on work that creates visible, positive change.</li>
         <li><strong>Collaboration:</strong> We succeed by partnering with and learning from established leaders in the environmental field.</li>
