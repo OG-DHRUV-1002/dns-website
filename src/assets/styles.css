@@ -101,7 +101,7 @@ margin-top: -80px; / Pull it up to fill the space visually */
   margin-bottom: 1rem;
   
   /* This line applies the animation */
-  animation: neelvardhanGlow 2.5s infinite alternate ease-in-out;
+  animation: neelvardhanGlow 4.0s infinite alternate ease-in-out;
 }
 
 /* This block defines the glowing animation */
