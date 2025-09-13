@@ -101,16 +101,23 @@ margin-top: -80px; / Pull it up to fill the space visually */
   margin-bottom: 1rem;
   
   /* This line applies the animation */
-  animation: neelvardhanGlow 4.0s infinite alternate ease-in-out;
+  animation: neelvardhanGlow 4s infinite alternate ease-in-out;
 }
 
 /* This block defines the glowing animation */
 @keyframes neelvardhanGlow {
   0% {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4), 0 0 10px rgba(255, 255, 255, 0.2);
+    /* Slightly brighter start */
+    text-shadow: 
+      0 0 8px rgba(255, 255, 255, 0.6), /* Wider, brighter initial glow */
+      0 0 15px rgba(255, 255, 255, 0.4); /* Adding another layer */
   }
   100% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    /* Much brighter and wider peak glow */
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.9), /* Intense, sharp glow */
+      0 0 25px rgba(255, 255, 255, 0.7), /* Wider, strong glow */
+      0 0 35px rgba(255, 255, 255, 0.5); /* Soft, very wide halo */
   }
 }
 
