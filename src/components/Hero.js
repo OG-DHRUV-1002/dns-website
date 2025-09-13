@@ -10,7 +10,7 @@ const Hero = () => {
       <ParallaxBannerLayer image="/hero-background.png" speed={10} />
       <ParallaxBannerLayer>
         <div className="hero-content">
-          <h1><strong>Neelvardhan</strong></h1>
+          <h1 className="hero-title-neelvardhan">Neelvardhan</h1>
           <h2><strong>Youth Power for a Greener Planet.</strong></h2>
           <div className="hero-buttons">
             <Link to="/contact" className="hero-btn primary">Get Involved</Link>
