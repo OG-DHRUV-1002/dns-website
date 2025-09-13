@@ -10,9 +10,18 @@ const UpcomingEvents = () => {
       ngo: 'Bhumi with VFS Global',
       date: 'Saturday, September 20, 2025',
       time: "7:00 AM – 9:00 AM",
-      location: "Juhu Koliwada Beach, Mumbai",
+      location: "Juhu Koliwada Beach, Santacruz(West)",
       description: 'This International Coastal Cleanup Day, let’s come together to create a real impact where it matters most — our oceans. Bhumi, in collaboration with VFS Global, is organizing large-scale coastal cleanups in Mumbai, and we are inviting corporates, Individuals, Colleges to come along.',
       link: 'https://www.connectfor.org/volunteer-now?aid=1574953346033&eventId=59638' // Replace with actual event link
+    },
+    {
+      title: 'Carter Beach Road Cleanup',
+      ngo: 'Ek Saath - The Earth Foundation',
+      date: 'Saturday, October 04, 2025',
+      time: "7:00 AM – 9:00 AM",
+      location: "Carter Road, Bandra(West)",
+      description: 'ConnectFor invites you to join us for a clean-up drive at Carter Road, Mumbai in collaboration with our partner Carter CleanUp, and Ek Saath - The Earth Foundation. Carter Road for years has been a garbage dump for all sorts of plastic, tins, cans, and even food waste – dumped near the sea and park. It takes away from the scenic view and area all residents should access. Let us all together create awareness about the environment & sustainability and create a difference by volunteering in this cleanup drive. Volunteers will be collecting plastic bottles, bags, bottle caps, waste, and garbage off the Carter Road beach. Volunteers will be provided with the necessary cleaning equipment by the NGO on the day of the activity.',
+      link: 'https://www.connectfor.org/volunteer-now?aid=1574953361867&eventId=59674' // Replace with actual event link
     },
   /*  {
       title: 'Tree Plantation at Central Park',
