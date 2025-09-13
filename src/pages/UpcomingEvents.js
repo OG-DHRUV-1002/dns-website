@@ -21,17 +21,6 @@ const UpcomingEvents = () => {
     }
   ];*/
 
-
-
-
-const events = [{title:'Will Update Soon',
-		ngo: 'Reputable NGOs are on the way',
-		date: 'Begins From September'}];
-
-
-
-
-
   return (
     <div className="page-container">
       <h1>Upcoming Events</h1>
