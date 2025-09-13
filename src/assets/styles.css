@@ -154,26 +154,84 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 
-/* Event Card */
+/* Update the main event card for new toggle icon positioning */
 .event-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative; /* Needed for absolute positioning of toggle icon */
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
-.event-card h3 {
-    color: #28a745;
+
+/* Update the header to align items */
+.event-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee; /* Add a subtle line */
 }
-.event-card a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+
+.event-card-header h3 {
+  margin: 0;
+  color: #333;
 }
+
+.event-card-header p {
+  margin: 0.25rem 0 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Styling for the NEW "Sign Up" button in the header */
+.signup-button-header {
+  display: inline-block;
+  padding: 8px 16px; /* Made smaller to fit the header */
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin-left: 1rem; /* Adds space between text and button */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.signup-button-header:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the body content */
+.event-card-body {
+  padding: 1.5rem;
+  padding-top: 2.5rem; /* Add extra padding at the top for the up-arrow */
+  position: relative;
+}
+
+/* Styling for the NEW professional toggle icons (chevrons) */
+.event-toggle-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #28a745; /* Your theme green */
+  cursor: pointer;
+}
+
+.event-toggle-icon.collapsed {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.event-toggle-icon.expanded {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 /* Add this at the end of your CSS file */
 
