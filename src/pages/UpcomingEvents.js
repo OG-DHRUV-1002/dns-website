@@ -9,8 +9,7 @@ const UpcomingEvents = () => {
       title: 'Juhu Koliwada Beach Cleanup Volunteers',
       ngo: 'Bhumi with VFS Global',
       date: 'Sunday, September 14, 2025',
-      description: 'This International Coastal Cleanup Day, let’s come together to create a real impact where it matters most — our oceans. Bhumi, in collaboration with VFS Global, is organizing large-scale coastal cleanups in Mumbai, and we are inviting corporates, Individuals, Colleges to come along.' 
-              '📅 Date: September 20, 2025 ''⏰ Time: 7:00 AM – 9:00 AM' '📍 Locations: Juhu Koliwada Beach, Mumbai.',
+      description: 'This International Coastal Cleanup Day, let’s come together to create a real impact where it matters most — our oceans. Bhumi, in collaboration with VFS Global, is organizing large-scale coastal cleanups in Mumbai, and we are inviting corporates, Individuals, Colleges to come along.' 📅 Date: September 20, 2025 ⏰ Time: 7:00 AM – 9:00 AM 📍 Locations: Juhu Koliwada Beach, Mumbai.',
       link: 'https://www.connectfor.org/volunteer-now?aid=1574953346033&eventId=59638' // Replace with actual event link
     },
   /*  {
