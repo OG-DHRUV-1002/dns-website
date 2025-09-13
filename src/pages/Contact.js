@@ -9,10 +9,10 @@ import InstagramButton from '../components/InstagramButton'; // <-- Import Insta
 const Contact = () => {
   return (
     <div className="page-container">
-      <h1>Get Involved</h1>
+      <h1 style={{color: '#5E9211' }}>Get Involved</h1>
       <h3><p>Ready to make a difference? Joining us is easy!</p></h3>
       
-      <h1>How to Join:</h1>
+      <h1 style={{color: '#5E9211' }}>How to Join:</h1>
       <ol>
         <h3><li>Follow our social media pages to stay updated.</li>
         <li>Join our official WhatsApp group for real-time event notifications.</li>
@@ -22,7 +22,7 @@ const Contact = () => {
         
 
 
-      <h1>Connect With Us:</h1>
+      <h1 style={{color: '#5E9211' }}>Connect With Us:</h1>
       <h3><p>For partnerships, queries, or suggestions, please contact us at:</p></h3>
 	<div>
         <EmailButton />
