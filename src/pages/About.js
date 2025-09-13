@@ -5,7 +5,7 @@ import FloatingRegisterButton from '../components/FloatingRegisterButton'; // <-
 const About = () => {
   return (
     <div className="page-container">
-      <h1>About Neelvardhan</h1>
+      <h1 style={{color: '#5E9211' }}>About Neelvardhan</h1>
       <p style={{ fontSize: '1.2rem', fontStyle: 'italic', color: '#555' }}>
         We are a passionate, youth-led voluntary force dedicated to mobilizing the next generation of environmental leaders.</p> 
 	<p style={{ fontSize: '1.2rem', fontStyle: 'italic', color: '#555' }}>At Neelvardhan, we don't just talk about change; we actively build it.
