@@ -1,5 +1,6 @@
 // src/pages/Achievements.js
 import React from 'react';
+import FloatingRegisterButton from '../components/FloatingRegisterButton'; // <-- 1. Import the new component
 
 const Achievements = () => {
   return (
@@ -16,6 +17,7 @@ const Achievements = () => {
           This is where we will proudly showcase the results of our beach clean-ups, tree plantation drives, and community campaigns. Check back soon to see the difference our dedicated volunteers are making. Our first events are right around the corner!
         </p>
       </div>
+  <FloatingRegisterButton /> 
     </div>
   );
 };
