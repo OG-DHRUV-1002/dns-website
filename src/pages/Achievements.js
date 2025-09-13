@@ -5,7 +5,7 @@ import FloatingRegisterButton from '../components/FloatingRegisterButton'; // <-
 const Achievements = () => {
   return (
     <div className="page-container">
-      <h1>Our Impact Journey</h1>
+      <h1 style={{color: '#5E9211' }}>Our Impact Journey</h1>
       <p>
         As a newly formed voluntary club, our journey to create a tangible impact is just beginning! We are incredibly excited about the future and are actively planning our first series of high-impact events with our partner NGOs.
       </p>
