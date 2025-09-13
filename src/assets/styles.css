@@ -240,7 +240,7 @@ margin-top: -80px; / Pull it up to fill the space visually */
   padding: 12px 24px;
   margin-top: 1rem;
   margin-right: 1rem; /* Adds space between buttons */
-  background-color: #25D366; /* Official WhatsApp Green */
+  background-color: #00BB00; /* Official WhatsApp Green */
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -251,7 +251,7 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 .whatsapp-button:hover {
-  background-color: #00BB00; /* Darker green on hover */
+  background-color: #25D366; /* Darker green on hover */
 }
 
 
