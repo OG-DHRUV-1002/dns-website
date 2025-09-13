@@ -33,7 +33,7 @@ const EventCard = ({ event, isExpanded, onHeaderClick }) => {
         <div className="event-card-body">
           {/* A professional chevron icon now indicates the state */}
           <div className="event-toggle-icon expanded">▲</div>
-          <p><strong>🫱🏼‍🫲🏼 In partnership with:</strong> {event.ngo}</p>
+          <p><strong>🤝🏼 In partnership with:</strong> {event.ngo}</p>
           <p><strong>📍 Location:</strong> {event.location}</p>
           <p><strong>💁🏻 Description:</strong> {event.description}</p>
         </div>
