@@ -539,7 +539,8 @@ html, body, #root {
   /* --- ACTION BUTTONS --- */
   .action-button {
     display: block; /* Make each button take the full width */
-    margin-right: 0.25rem;
+    margin-right: 0;
+    margin-left: 0;
     margin-bottom: 1rem;
     text-align: center;
   }
