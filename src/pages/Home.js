@@ -2,7 +2,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import './Home.css'; // Make sure this CSS file is imported
-import FloatingRegisterButton from '../components/FloatingRegisterButton'; // <-- 1. Import the new component
 
 const Home = () => {
   // Updated list with your 5 main activities
@@ -27,8 +26,6 @@ const Home = () => {
               </div>
               <h3>{activity.title}</h3>
               <a href="/upcoming-events" className="activity-button">Learn More</a>
-    <FloatingRegisterButton /> 
-
             </div>
           ))}
         </div>
