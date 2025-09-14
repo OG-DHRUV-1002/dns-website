@@ -4,6 +4,8 @@ import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
+  const registerLink = "https://forms.gle/QP95Kq8PDMNx6TLVA";
+
   return (
     // Add className="hero-parallax-banner" to this component
     <ParallaxBanner className="hero-parallax-banner" style={{ height: '100vh' }}>
@@ -15,6 +17,7 @@ const Hero = () => {
           <div className="hero-buttons">
             <Link to="/contact" className="hero-btn primary">Get Involved</Link>
             <Link to="/achievements" className="hero-btn secondary">See Our Impact</Link>
+  <a href={registerLink} target="_blank" rel="noopener noreferrer" className="hero-btn primary-accent">📢 Register Here !!</a>
           </div>
         </div>
       </ParallaxBannerLayer>
