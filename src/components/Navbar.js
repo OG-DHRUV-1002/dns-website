@@ -20,9 +20,8 @@ const Navbar = () => {
     setIsMenuOpen(false); // Close mobile menu if open
 
     const confirmNavigation = window.confirm(
-  "IMPORTANT: Please ensure you are a registered member of our WhatsApp community BEFORE you sign up for an event. Only sign-ups from registered members will be considered valid.\n\n" +
-  "Also, make sure you are logged into your ConnectFor account.\n\n" +
-  "Click 'OK' to proceed to the Upcoming Events page. Otherwise, click 'Cancel'."
+  "IMPORTANT: Please ensure you are a registered member of our WhatsApp community BEFORE you sign up for an event. Only sign-ups from registered members will be considered valid.\n" +
+  "Also, make sure you are logged into your ConnectFor account."
 );
 
     if (confirmNavigation) {
