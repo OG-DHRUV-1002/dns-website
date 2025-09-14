@@ -184,14 +184,15 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 .hero-btn.primary-accent {
-  background-color: #77B816; /* A bright, attention-grabbing accent color like yellow/gold */
-  color: #FFFFFF; /* Dark text for readability on a light button */
-  border-color: #ffc107;
+  background-color: #77B816; /* Copied green color */
+  color: white;
+  border-radius: 30px; /* Copied pill shape */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Copied shadow */
 }
 
 .hero-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
 
