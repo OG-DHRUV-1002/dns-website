@@ -153,9 +153,14 @@ margin-top: -80px; / Pull it up to fill the space visually */
   font-weight: 400;
 }
 
+/* This container now manages the layout for all three buttons */
 .hero-buttons {
-  display: flex;
-  gap: 1rem;
+  display: flex; /* Use Flexbox for alignment */
+  flex-wrap: wrap; /* Allows buttons to stack on smaller screens */
+  justify-content: center; /* Horizontally centers the group of buttons */
+  align-items: center; /* Vertically aligns the buttons */
+  gap: 1.5rem; /* Controls the spacing between all buttons */
+  margin-top: 2rem;
 }
 
 .hero-btn {
@@ -176,6 +181,12 @@ margin-top: -80px; / Pull it up to fill the space visually */
   background-color: transparent;
   color: white;
   border-color: white;
+}
+
+.hero-btn.primary-accent {
+  background-color: #ffc107; /* A bright, attention-grabbing accent color like yellow/gold */
+  color: #1a1a1a; /* Dark text for readability on a light button */
+  border-color: #ffc107;
 }
 
 .hero-btn:hover {
