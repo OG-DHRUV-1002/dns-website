@@ -452,19 +452,28 @@ html, body, #root {
   min-height: 100vh; /* Make the container AT LEAST the full height of the screen */
 }
 
-/* 2. Main Content Area */
+/* --- Add bottom margin to prevent overlap with fixed footer --- */
+
 .main-content {
-  flex-grow: 1; /* This is the key: it makes this section expand to fill all available space, pushing the footer down */
+  /* Add a bottom margin that is slightly more than the footer's height */
+  margin-bottom: 60px; /* Adjust this value if needed */
 }
 
-/* 3. Footer Styling */
+/* --- Fixed Footer Styling --- */
+
 .footer {
-  flex-shrink: 0; /* Prevents the footer from shrinking */
-  /* Your other footer styles like background-color, padding, etc., go here */
-  text-align: center;
-  padding: 1rem;
+  position: fixed; /* Lock the footer's position */
+  left: 0;
+  bottom: 0; /* Stick it to the bottom of the screen */
+  width: 100%; /* Make it span the full width */
+  z-index: 999; /* Ensure it stays on top of content, but below things like popups */
+
   background-color: #72AD1C;
   color: white;
+  text-align: center;
+  
+  /* --- Making it thinner --- */
+  padding: 0.75rem 1rem; /* Reduced padding from 1rem */
 }
 
 /* Add any other global styles you have here */
