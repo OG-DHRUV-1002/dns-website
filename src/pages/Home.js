@@ -27,11 +27,12 @@ const Home = () => {
               </div>
               <h3>{activity.title}</h3>
               <a href="/upcoming-events" className="activity-button">Learn More</a>
+    <FloatingRegisterButton /> 
+
             </div>
           ))}
         </div>
       </section>
-  <FloatingRegisterButton /> 
     </div>
   );
 };
