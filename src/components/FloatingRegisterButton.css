@@ -1,6 +1,6 @@
 .floating-register-btn {
   position: fixed; /* This is the key to making it float */
-  bottom: 25px; /* Distance from the bottom of the screen */
+  bottom: 20px; /* Distance from the bottom of the screen */
   right: 25px; /* Distance from the right of the screen */
   z-index: 1000; /* Ensures it stays on top of other content */
   
