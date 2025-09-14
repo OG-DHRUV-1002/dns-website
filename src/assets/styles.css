@@ -473,8 +473,8 @@ html, body, #root {
   text-align: center;
   
 /* --- Making it MORE thinner --- */
-  padding: 0.4rem 0.75rem; /* Reduced padding further. Adjust 0.4rem as desired. */
-  font-size: 0.85rem; /* Optional: Make text slightly smaller to fit better */
+  padding: 0.2rem 0.50rem; /* Reduced padding further. Adjust 0.4rem as desired. */
+  font-size: 0.65rem; /* Optional: Make text slightly smaller to fit better */
 }
 
 /* Add any other global styles you have here */
