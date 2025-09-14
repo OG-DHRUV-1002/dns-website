@@ -473,7 +473,7 @@ html, body, #root {
   text-align: center;
   
   /* --- Making it thinner --- */
-  padding: 0.75rem 1rem; /* Reduced padding from 1rem */
+  padding: 0.50rem 0.75rem; /* Reduced padding from 1rem */
 }
 
 /* Add any other global styles you have here */
