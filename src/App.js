@@ -35,15 +35,21 @@ function AppContent() {
 }
 
 
+// src/App.js
+
 function App() {
   return (
-    <Router>
-      <div className="app-container"> {/* <--- WRAP EVERYTHING IN app-container */}
+    // The parent div MUST have className="app-container"
+    <div className="app-container">
+      <Router>
         <Navbar />
-        <AppContent /> {/* This now correctly maps to .main-content */}
+        
+        {/* Your AppContent component correctly has the "main-content" class inside it */}
+        <AppContent /> 
+        
         <Footer />
-      </div> {/* <--- CLOSE app-container */}
-    </Router>
+      </Router>
+    </div>
   );
 }
 
