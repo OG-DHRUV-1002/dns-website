@@ -184,8 +184,8 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 .hero-btn.primary-accent {
-  background-color: #ffc107; /* A bright, attention-grabbing accent color like yellow/gold */
-  color: #1a1a1a; /* Dark text for readability on a light button */
+  background-color: #77B816; /* A bright, attention-grabbing accent color like yellow/gold */
+  color: #FFFFFF; /* Dark text for readability on a light button */
   border-color: #ffc107;
 }
 
