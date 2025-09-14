@@ -38,9 +38,11 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <Navbar />
-      <AppContent /> {/* Use the new content wrapper */}
-      <Footer />
+      <div className="app-container"> {/* <--- WRAP EVERYTHING IN app-container */}
+        <Navbar />
+        <AppContent /> {/* This now correctly maps to .main-content */}
+        <Footer />
+      </div> {/* <--- CLOSE app-container */}
     </Router>
   );
 }
