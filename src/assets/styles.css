@@ -184,10 +184,21 @@ margin-top: -80px; / Pull it up to fill the space visually */
 }
 
 .hero-btn.primary-accent {
-  background-color: #77B816; /* Copied green color */
+display: inline-block;
+  padding: 12px 24px;
+  background-color: #77B816; /* Example: WhatsApp Green */
   color: white;
-  border-radius: 30px; /* Copied pill shape */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Copied shadow */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 30px; /* Pill shape */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+position: fixed; /* This is the key to making it float */
+  bottom: 60px; /* Distance from the bottom of the screen */
+  right: 25px; /* Distance from the right of the screen */
+  z-index: 1000; /* Ensures it stays on top of other content */
 }
 
 .hero-btn:hover {
