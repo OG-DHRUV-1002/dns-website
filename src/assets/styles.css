@@ -436,13 +436,44 @@ margin-top: -80px; / Pull it up to fill the space visually */
   margin-top: 0;
 }
 
-/* Footer */
+/* --- Sticky Footer CSS --- */
+
+html, body, #root { /* Ensure html, body, and root div fill the viewport */
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This makes the entire app container at least viewport height */
+}
+
+/* This targets the <main> element within AppContent */
+.main-content {
+  flex-grow: 1; /* This makes your content area expand to push the footer down */
+  display: flex; /* Optional: If your pages within main-content should also be flex */
+  flex-direction: column; /* Optional */
+}
+
+/* Your page-container styles (for non-homepage content padding) */
+/* This will now apply ON TOP of .main-content for other pages */
+.page-container {
+  padding: 20px; /* Example padding */
+  max-width: 1200px; /* Optional: Constrain content width */
+  margin: 0 auto; /* Optional: Center content */
+}
+
+/* Your existing footer styles */
 .footer {
   text-align: center;
-  padding: 0.001rem;
-  background-color: #72AD1C;
+  padding: 1rem;
+  background-color: #72AD1C; /* Dark background */
   color: white;
+  flex-shrink: 0; /* Ensures the footer doesn't shrink if content is too large */
 }
+
+/* Add any other global styles you have here */
 
 
 
