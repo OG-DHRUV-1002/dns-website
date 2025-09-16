@@ -20,8 +20,9 @@ const Navbar = () => {
     setIsMenuOpen(false); // Close mobile menu if open
 
     const confirmNavigation = window.confirm(
-  "IMPORTANT: Please ensure you are a registered member of our WhatsApp community BEFORE you sign up for an event. Only sign-ups from registered members will be considered valid."
-);
+    "IMPORTANT: To participate in our events, you must register through our official Neelvardhan Google Form. \n\n" +
+  "ConnectFor will then approve your registration based on this form. Please ensure you are also part of our WhatsApp community for event updates.\n\n");
+
 
     if (confirmNavigation) {
       navigate('/upcoming-events'); // Navigate if user confirms
