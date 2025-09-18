@@ -14,21 +14,6 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  // --- NEW FUNCTION FOR UPCOMING EVENTS LINK ---
-  const handleUpcomingEventsClick = (e) => {
-    e.preventDefault(); // Prevent default NavLink navigation
-    setIsMenuOpen(false); // Close mobile menu if open
-
-    const confirmNavigation = window.confirm(
-    "IMPORTANT: To participate in our events, you must register through our official Neelvardhan Google Form. \n\n" +
-  "ConnectFor will then approve your registration based on this form. Please ensure you are also part of our WhatsApp community for event updates.\n\n");
-
-
-    if (confirmNavigation) {
-      navigate('/upcoming-events'); // Navigate if user confirms
-    }
-  };
-  // --- END NEW FUNCTION ---
 
   return (
     <nav className="navbar">
