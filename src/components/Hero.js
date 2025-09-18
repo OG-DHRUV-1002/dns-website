@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     // Add className="hero-parallax-banner" to this component
     <ParallaxBanner className="hero-parallax-banner" style={{ height: '100vh' }}>
-      <ParallaxBannerLayer image="/hero-background.png" speed={10} />
+      <ParallaxBannerLayer image="/hero-background.webp" speed={10} />
       <ParallaxBannerLayer>
         <div className="hero-content">
           <h1 className="hero-title-neelvardhan">Neelvardhan</h1>
