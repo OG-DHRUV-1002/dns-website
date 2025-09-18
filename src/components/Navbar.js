@@ -1,11 +1,8 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate hook
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
