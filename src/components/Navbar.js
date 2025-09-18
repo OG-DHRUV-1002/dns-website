@@ -36,7 +36,7 @@ const Navbar = () => {
         <li><NavLink to="/" end onClick={handleLinkClick}>Home</NavLink></li>
         <li><NavLink to="/about" onClick={handleLinkClick}>About Us</NavLink></li>
         {/* --- APPLY NEW onClick HANDLER HERE --- */}
-        <li><NavLink to="/upcoming-events" onClick={handleUpcomingEventsClick}>Upcoming Events</NavLink></li>
+        <li><NavLink to="/upcoming-events" onClick={handleLinkClick}>Upcoming Events</NavLink></li>
         <li><NavLink to="/achievements" onClick={handleLinkClick}>Achievements</NavLink></li>
         <li><NavLink to="/contact" onClick={handleLinkClick}>Contact</NavLink></li>
       </ul>
@@ -47,7 +47,7 @@ const Navbar = () => {
           <li onClick={handleLinkClick}><NavLink to="/" end>Home</NavLink></li>
           <li onClick={handleLinkClick}><NavLink to="/about">About Us</NavLink></li>
           {/* --- APPLY NEW onClick HANDLER HERE --- */}
-          <li onClick={() => handleUpcomingEventsClick({ preventDefault: () => {} })}>
+          <li onClick={() => handleLinkClick({ preventDefault: () => {} })}>
             <NavLink to="/upcoming-events">Upcoming Events</NavLink>
           </li>
           <li onClick={handleLinkClick}><NavLink to="/achievements">Achievements</NavLink></li>
