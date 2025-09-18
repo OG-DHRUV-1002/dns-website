@@ -6,11 +6,11 @@ import './Home.css'; // Make sure this CSS file is imported
 const Home = () => {
   // Updated list with your 5 main activities
   const activities = [
-    { title: 'Tree Plantation Initiatives', image: '/images/placeholder-tree.png' },
-    { title: 'Food & Clothes Donations', image: '/images/placeholder-donation.png' },
-    { title: 'Beach Clean-Up Drives', image: '/images/placeholder-beach.png' },
-    { title: 'Environmental Awareness Campaigns', image: '/images/placeholder-awareness.png' },
-    { title: 'Community Teachings', image: '/images/placeholder-teaching.png' },
+    { title: 'Tree Plantation Initiatives', image: '/images/placeholder-tree.webp' },
+    { title: 'Food & Clothes Donations', image: '/images/placeholder-donation.webp' },
+    { title: 'Beach Clean-Up Drives', image: '/images/placeholder-beach.webp' },
+    { title: 'Environmental Awareness Campaigns', image: '/images/placeholder-awareness.webp' },
+    { title: 'Community Teachings', image: '/images/placeholder-teaching.webp' },
   ];
 
   return (
