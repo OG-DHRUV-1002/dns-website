@@ -383,6 +383,49 @@ position: fixed; /* This is the key to making it float */
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.filter-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns filter to the right */
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem; /* Space between label and select */
+  padding-right: 10px; /* Slight padding from edge */
+}
+
+.filter-label {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: bold;
+}
+
+.category-select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  appearance: none; /* Remove default dropdown arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-5.4H18.2c-4.1%200-8.1%201.7-11%204.6l-5.6%205.6c-3.5%203.5-3.5%209.2%200%2012.7l126.9%20126.9c3.5%203.5%209.2%203.5%2012.7%200l126.9-126.9c2.8-2.9%204.5-6.9%204.5-11z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  min-width: 180px; /* Ensure sufficient width */
+}
+
+.category-select:focus {
+  outline: none;
+  border-color: #5E9211; /* Highlight on focus */
+  box-shadow: 0 0 0 2px rgba(94, 146, 17, 0.2);
+}
+
+/* Ensure no category title is shown if filtered to 'All Options' and there are no events */
+.event-category-section h2.category-title {
+  /* No changes needed here if it's already hidden based on logic in JS */
+  /* but if it was always showing, you'd add: display: none; */
+}
+
 /* Add this at the end of your CSS file */
 
 .whatsapp-button {
@@ -597,32 +640,127 @@ html, body, #root {
   font-size: 0.75rem; /* Optional: Make text slightly smaller to fit better */
 }
 
-/* --- Achievement Card Styling (Achievements Page - lighter background) --- */
+/* --- Adjustments for Achievement Cards (Smaller & Clickable) --- */
+
+.achievements-list {
+  display: grid; /* Change to grid for more compact layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Space between cards */
+}
+
 .achievement-card {
-  background-color: #ffffff; /* White background for achievements */
-  border-left: 5px solid #5E9211; /* Green accent border */
+  /* Keep existing styling, but make it more compact */
+  padding: 1.2rem; /* Reduced padding */
+  border-left: 5px solid #5E9211;
   border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  color: #333; /* Dark text for light background */
+  background-color: #ffffff;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 150px; /* Ensure a minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute content */
+}
+
+.achievement-card.clickable-card {
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.achievement-card.clickable-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 .achievement-card h3 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.3rem; /* Slightly smaller title */
+  margin-bottom: 0.8rem;
+  color: #285A00; /* Darker green for title */
 }
 
-.achievement-card p {
-  line-height: 1.6;
+.achievement-meta { /* For date and location */
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 10px; /* Space between date and location */
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+.achievement-outcome { /* For the outcome description */
+  font-size: 1rem;
+  line-height: 1.5;
   color: #555;
-  text-align: left;
+  margin-top: auto; /* Pushes outcome to the bottom if content is short */
 }
 
-.achievement-card p strong {
-  color: #333;
+/* --- Image Modal Styles --- */
+
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Ensure it's on top of everything */
 }
+
+.image-modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto; /* Enable scrolling for many images */
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-modal-btn:hover {
+  color: #dc3545; /* Red on hover */
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: #285A00;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modal-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive image grid */
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover; /* Ensures images fill their space nicely */
+}
+
 
 /* Add any other global styles you have here */
 
@@ -632,7 +770,26 @@ html, body, #root {
 
 /* --- RESPONSIVE DESIGN FOR MOBILE & TABLETS --- */
 @media (max-width: 768px) {
-
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .category-select {
+    width: 100%; /* Full width on mobile */
+    min-width: unset;
+  }
+  .achievements-list {
+    grid-template-columns: 1fr; /* Single column for achievements on mobile */
+  }
+  .image-modal-content {
+    padding: 1rem;
+  }
+  .modal-images-grid {
+    grid-template-columns: 1fr; /* Single column for modal images on mobile */
+  }
+}
   /* --- NAVIGATION BAR --- */
   .navbar {
     padding: 1rem; /* Reduce padding on smaller screens */
