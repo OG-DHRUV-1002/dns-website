@@ -207,21 +207,19 @@ position: fixed; /* This is the key to making it float */
 }
 
 
-/* --- UpcomingEvents.css (or main styles.css) --- */
-
-/* General page container - adjust margin-top if using fixed navbar */
+/* --- General Page Container for both Upcoming Events and Achievements --- */
 .page-container {
   padding: 20px;
   max-width: 1000px;
-  margin: 80px auto 20px auto; 
-  background-color: #f0f2f5;
+  margin: 80px auto 20px auto; /* Adjust top margin if fixed navbar */
+  background-color: #f0f2f5; /* Light background for the page content */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .page-container h1 {
   font-size: 2.5rem;
-  color: #5E9211; /* Your primary green */
+  color: #285A00; /* Neelvardhan green */
   text-align: center;
   margin-bottom: 1.5rem;
   padding-bottom: 0.8rem;
@@ -236,49 +234,42 @@ position: fixed; /* This is the key to making it float */
   margin-bottom: 2.5rem;
 }
 
-/* Category Section Styling */
-.event-category-section {
+/* --- Category Section Styling (for both pages) --- */
+.event-category-section,
+.achievement-category-section {
   margin-bottom: 3rem;
   padding-top: 1rem;
   border-top: 1px solid #e0e0e0;
 }
 
-.event-category-section:first-of-type {
-  border-top: none;
+.event-category-section:first-of-type,
+.achievement-category-section:first-of-type {
+  border-top: none; /* No top border for the first category */
 }
 
-.event-category-section h2 {
+.event-category-section h2,
+.achievement-category-section h2 {
   font-size: 2rem;
-  color: #285A00; /* A darker green for category titles */
+  color: #285A00; /* Neelvardhan green */
   margin-bottom: 1.5rem;
   padding-left: 10px;
-  border-left: 5px solid #5E9211; /* Accent border */
+  border-left: 5px solid #5E9211;
 }
 
-.events-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem; /* Spacing between event cards */
-}
-
-/* Event Card General Styling */
+/* --- Event Card Styling (Upcoming Events) --- */
 .event-card {
-  background-color: #333; /* Dark background */
+  background-color: #2a2a2a; /* Dark background for cards */
   color: #f0f0f0;
   border-radius: 8px;
+  margin-bottom: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   overflow: hidden;
   transition: all 0.3s ease;
-  border-left: 5px solid transparent; /* Default transparent border */
-}
-
-.event-card.expanded {
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 .event-card.internal-event {
-  border-left-color: #ffc107; /* Orange/Yellow for internal events */
-  background-color: #444; /* Slightly different background for internal */
+  border-left: 5px solid #ffc107; /* Orange/Yellow border for internal events */
+  background-color: #383838; /* Slightly different background */
 }
 
 .event-header {
@@ -287,40 +278,31 @@ position: fixed; /* This is the key to making it float */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #555; /* Subtle separator */
+  border-bottom: 1px solid #444;
 }
 
 .event-header h2 {
   font-size: 1.6rem;
   margin: 0;
   color: #f0f0f0;
-  /* Override default h2 styles from page-container if necessary */
-  border-left: none; 
-  padding-left: 0;
-}
-
-.event-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* Align date/time to the right */
+  border-left: none; /* Override category h2 border */
 }
 
 .event-info p {
   margin: 0;
   font-size: 0.95rem;
   color: #bbb;
-  text-align: right;
+  text-align: left; /* Align text within info block */
 }
 
 .dropdown-arrow {
   font-size: 1.2rem;
   margin-left: 1rem;
-  color: #eee;
 }
 
 .event-details {
   padding: 1.5rem;
-  padding-top: 0.5rem; /* Less padding after header */
+  padding-top: 0.5rem; /* Less padding at top since it follows header */
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -335,10 +317,9 @@ position: fixed; /* This is the key to making it float */
   color: #eee;
 }
 
-/* Sign Up Button Styling */
 .signup-btn {
   display: inline-block;
-  background-color: #5E9211; /* Your primary green */
+  background-color: #28a745; /* Green button */
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -346,24 +327,23 @@ position: fixed; /* This is the key to making it float */
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 1rem;
-  border: none;
+  border: none; /* Ensure no default button border */
   cursor: pointer;
 }
 
 .signup-btn.internal-btn {
-  background-color: #ffc107; /* Orange/Yellow for internal events */
+  background-color: #ffc107; /* Orange for internal events */
   color: #333;
-  cursor: default; /* Not a clickable signup */
-  box-shadow: none; /* Remove hover shadow for internal */
+  cursor: default; /* Indicate it's not clickable for signup */
 }
 
 .signup-btn:hover:not(.internal-btn) {
-  background-color: #4CAF50; /* Lighter green on hover */
+  background-color: #218838;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 200, 0, 0.3);
 }
 
-.no-events-message {
+.no-events-message,
+.no-achievements-message {
   font-style: italic;
   color: #777;
   background-color: #e9e9e9;
@@ -374,19 +354,31 @@ position: fixed; /* This is the key to making it float */
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Media Queries for Responsiveness (Optional but recommended) */
-@media (max-width: 768px) {
-  .page-container {
-    padding: 15px;
-  }
-  .page-container h1 {
-    font-size: 2rem;
-  }
-  .event-header h2 {
-    font-size: 1.3rem;
-  }
+/* --- Achievement Card Styling (Achievements Page) --- */
+.achievement-card {
+  background-color: #ffffff; /* Lighter background for achievements */
+  border-left: 5px solid #5E9211; /* Green accent */
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.achievement-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.achievement-card p {
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+}
+
+.achievement-card p strong {
+  color: #333;
+}
 
 /* Add this at the end of your CSS file */
 
