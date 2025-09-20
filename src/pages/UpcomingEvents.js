@@ -1,7 +1,7 @@
 // src/pages/UpcomingEvents.js
 import React, { useState } from 'react';
 import EventCard from '../components/EventCard';
-import '../styles.css'; // Make sure this CSS file exists and is linked
+import '../../assets/styles.css'; // Make sure this CSS file exists and is linked
 
 const UpcomingEvents = () => {
   const [expandedEventId, setExpandedEventId] = useState(null); // State to track expanded card by unique ID
