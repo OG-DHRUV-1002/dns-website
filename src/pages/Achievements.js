@@ -91,6 +91,8 @@ const Achievements = () => {
           )}
         </section>
       ))}
+  <FloatingRegisterButton /> 
+
     </div>
   );
 };
