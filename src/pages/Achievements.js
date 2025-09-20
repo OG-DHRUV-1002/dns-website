@@ -1,10 +1,14 @@
 // src/pages/Achievements.js
-import React from 'react';
+import React, { useState } from 'react';
 import FloatingRegisterButton from '../components/FloatingRegisterButton'; // <-- 1. Import the new component
 // import '../../assets/styles.css'; // Only if not already globally imported
 
 const Achievements = () => {
-  // --- CATEGORIZED ACHIEVEMENTS DATA (WITH ORIGINAL PROPERTIES) ---
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImages, setCurrentImages] = useState([]);
+  const [currentEventTitle, setCurrentEventTitle] = useState('');
+
+  // --- CATEGORIZED ACHIEVEMENTS DATA ---
   const categorizedAchievements = {
     'Beach Clean-Up Drives': [
       {
@@ -14,75 +18,84 @@ const Achievements = () => {
         date: 'September 20, 2025',
         location: 'Silver Beach, Juhu, Mumbai',
         outcome: 'Successfully conducted an internal logistics assessment and refined operational workflows, crucial for future large-scale community events. ~150 kg of waste removed.',
+        images: [
+          'https://via.placeholder.com/400x300?text=Juhu+Cleanup+Image+1',
+          'https://via.placeholder.com/400x300?text=Juhu+Cleanup+Image+2',
+        ],
       },
-      // {
-      //   id: 'carter-cleanup-achieved',
-      //   title: 'Carter Beach Road Cleanup',
-      //   ngo: 'Ek Saath - The Earth Foundation, via ConnectFor',
-      //   date: 'October 04, 2025',
-      //   location: 'Carter Road, Bandra (West)',
-      //   outcome: 'Engaged X volunteers in removing Y kg of plastic and debris, significantly improving the beach environment.',
-      // },
+      {
+        id: 'carter-cleanup-achieved',
+        title: 'Carter Beach Road Cleanup',
+        ngo: 'Ek Saath - The Earth Foundation, via ConnectFor',
+        date: 'October 04, 2025',
+        location: 'Carter Road, Bandra (West)',
+        outcome: 'Engaged X volunteers in removing Y kg of plastic and debris, significantly improving the beach environment.',
+        images: [
+          'https://via.placeholder.com/400x300?text=Carter+Cleanup+Image+1',
+          'https://via.placeholder.com/400x300?text=Carter+Cleanup+Image+2',
+          'https://via.placeholder.com/400x300?text=Carter+Cleanup+Image+3',
+        ],
+      },
     ],
     'Restoration Drives': [
-      // {
-      //   id: 'aarey-plantation-achieved',
-      //   title: 'Aarey Colony Tree Plantation Drive',
-      //   ngo: 'WWF-India',
-      //   date: 'October 12, 2025',
-      //   location: 'Aarey Milk Colony',
-      //   outcome: 'Planted 100 native saplings, contributing to local biodiversity and green cover.',
-      // },
+      {
+        id: 'aarey-plantation-achieved',
+        title: 'Aarey Colony Tree Plantation Drive',
+        ngo: 'WWF-India',
+        date: 'October 12, 2025',
+        location: 'Aarey Milk Colony',
+        outcome: 'Planted 100 native saplings, contributing to local biodiversity and green cover.',
+        images: [
+          'https://via.placeholder.com/400x300?text=Aarey+Plantation+Image+1',
+          'https://via.placeholder.com/400x300?text=Aarey+Plantation+Image+2',
+        ],
+      },
     ],
     'Donation Drives': [
-      // {
-      //   id: 'winter-blanket-achieved',
-      //   title: 'Winter Blanket Collection & Distribution',
-      //   ngo: 'Local Community Shelters',
-      //   date: 'November 15, 2025',
-      //   location: 'Various collection points',
-      //   outcome: 'Collected and distributed over 200 blankets to vulnerable communities during winter.',
-      // },
+      // ... add donation achievements with images
     ],
     'Environmental Awareness Campaigns': [
-      // {
-      //   id: 'plastic-workshop-achieved',
-      //   title: 'Youth Workshop on Plastic Waste Management',
-      //   ngo: 'Green Initiative Foundation',
-      //   date: 'November 02, 2025',
-      //   location: 'Online (Zoom)',
-      //   outcome: 'Educated 120 students on practical strategies for reducing plastic consumption and promoting recycling.',
-      // },
+      // ... add awareness achievements with images
     ],
     'Community Teachings / Skill-Based Events': [
-      // {
-      //   id: 'leadership-training-achieved',
-      //   title: 'Volunteer Leadership & Event Management Training',
-      //   ngo: 'Internal Mentors',
-      //   date: 'November 08, 2025',
-      //   location: 'Neelvardhan HQ (Virtual)',
-      //   outcome: 'Trained 15 core members in advanced leadership, team coordination, and event execution techniques.',
-      // },
+      // ... add teaching achievements with images
     ],
+  };
+
+  const openImageModal = (eventTitle, images) => {
+    setCurrentEventTitle(eventTitle);
+    setCurrentImages(images);
+    setIsModalOpen(true);
+  };
+
+  const closeImageModal = () => {
+    setIsModalOpen(false);
+    setCurrentImages([]);
+    setCurrentEventTitle('');
   };
 
   return (
     <div className="page-container achievements-page">
-      <h1 className="page-title">Our Impact Journey</h1> {/* Added class for specific styling */}
-      <p className="page-description">Here we proudly showcase the results of our efforts across various initiatives. This is the tangible difference our dedicated volunteers are making.</p>
+      <h1 className="page-title">Our Impact Journey</h1>
+      <p className="page-description">Here we proudly showcase the results of our efforts across various initiatives. Click on an event to view images!</p>
 
       {Object.entries(categorizedAchievements).map(([category, events]) => (
         <section key={category} className="achievement-category-section">
-          <h2 className="category-title">{category}</h2> {/* Added class for specific styling */}
+          <h2 className="category-title">{category}</h2>
           {events.length > 0 ? (
-            <div className="achievements-list"> {/* New container for achievements within a category */}
+            <div className="achievements-list">
               {events.map((event) => (
-                <div key={event.id} className="achievement-card">
+                <div
+                  key={event.id}
+                  className="achievement-card clickable-card" // Added clickable-card class
+                  onClick={() => openImageModal(event.title, event.images)}
+                >
                   <h3>{event.title}</h3>
-                  <p><strong>📅 Date:</strong> {event.date}</p>
-                  <p><strong>🤝🏼 Partners:</strong> {event.ngo}</p>
-                  <p><strong>📍 Location:</strong> {event.location}</p>
-                  <p><strong>✨ Outcome:</strong> {event.outcome}</p>
+                  <p className="achievement-meta">
+                    <span className="achievement-date">📅 {event.date}</span>
+                    <span className="achievement-location">📍 {event.location}</span>
+                  </p>
+                  <p className="achievement-outcome">✨ {event.outcome}</p>
                 </div>
               ))}
             </div>
@@ -91,6 +104,22 @@ const Achievements = () => {
           )}
         </section>
       ))}
+
+      {/* Image Modal */}
+      {isModalOpen && (
+        <div className="image-modal-overlay" onClick={closeImageModal}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal-btn" onClick={closeImageModal}>&times;</button>
+            <h3 className="modal-title">Images for: {currentEventTitle}</h3>
+            <div className="modal-images-grid">
+              {currentImages.map((src, index) => (
+                <img key={index} src={src} alt={`${currentEventTitle} ${index + 1}`} className="modal-image" />
+              ))}
+            </div>
+            {currentImages.length === 0 && <p>No images available for this event.</p>}
+          </div>
+        </div>
+      )}
   <FloatingRegisterButton /> 
 
     </div>
