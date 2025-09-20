@@ -207,82 +207,184 @@ position: fixed; /* This is the key to making it float */
 }
 
 
-/* Update the main event card for new toggle icon positioning */
-.event-card {
-  position: relative; /* Needed for absolute positioning of toggle icon */
-  background: #fff;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: all 0.3s ease;
+/* --- UpcomingEvents.css (or main styles.css) --- */
+
+/* General page container - adjust margin-top if using fixed navbar */
+.page-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 80px auto 20px auto; 
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Update the header to align items */
-.event-card-header {
+.page-container h1 {
+  font-size: 2.5rem;
+  color: #5E9211; /* Your primary green */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #5E9211;
+}
+
+.page-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Category Section Styling */
+.event-category-section {
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.event-category-section:first-of-type {
+  border-top: none;
+}
+
+.event-category-section h2 {
+  font-size: 2rem;
+  color: #285A00; /* A darker green for category titles */
+  margin-bottom: 1.5rem;
+  padding-left: 10px;
+  border-left: 5px solid #5E9211; /* Accent border */
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spacing between event cards */
+}
+
+/* Event Card General Styling */
+.event-card {
+  background-color: #333; /* Dark background */
+  color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent; /* Default transparent border */
+}
+
+.event-card.expanded {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.event-card.internal-event {
+  border-left-color: #ffc107; /* Orange/Yellow for internal events */
+  background-color: #444; /* Slightly different background for internal */
+}
+
+.event-header {
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 1.5rem;
-  cursor: pointer;
-  border-bottom: 1px solid #eee; /* Add a subtle line */
+  border-bottom: 1px solid #555; /* Subtle separator */
 }
 
-.event-card-header h3 {
+.event-header h2 {
+  font-size: 1.6rem;
   margin: 0;
-  color: #333;
+  color: #f0f0f0;
+  /* Override default h2 styles from page-container if necessary */
+  border-left: none; 
+  padding-left: 0;
 }
 
-.event-card-header p {
-  margin: 0.25rem 0 0;
-  color: #555;
-  font-size: 0.9rem;
+.event-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align date/time to the right */
 }
 
-/* Styling for the NEW "Sign Up" button in the header */
-.signup-button-header {
-  display: inline-block;
-  padding: 8px 16px; /* Made smaller to fit the header */
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-  margin-left: 1rem; /* Adds space between text and button */
-  white-space: nowrap; /* Prevents text from wrapping */
+.event-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #bbb;
+  text-align: right;
 }
 
-.signup-button-header:hover {
-  background-color: #0056b3;
+.dropdown-arrow {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  color: #eee;
 }
 
-/* Styling for the body content */
-.event-card-body {
+.event-details {
   padding: 1.5rem;
-  padding-top: 2.5rem; /* Add extra padding at the top for the up-arrow */
-  position: relative;
+  padding-top: 0.5rem; /* Less padding after header */
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-/* Styling for the NEW professional toggle icons (chevrons) */
-.event-toggle-icon {
-  position: absolute;
-  font-size: 1.5rem;
-  color: #28a745; /* Your theme green */
+.event-details p {
+  margin-bottom: 0.8rem;
+  color: #ccc;
+  text-align: left;
+}
+
+.event-details p strong {
+  color: #eee;
+}
+
+/* Sign Up Button Styling */
+.signup-btn {
+  display: inline-block;
+  background-color: #5E9211; /* Your primary green */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+  border: none;
   cursor: pointer;
 }
 
-.event-toggle-icon.collapsed {
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+.signup-btn.internal-btn {
+  background-color: #ffc107; /* Orange/Yellow for internal events */
+  color: #333;
+  cursor: default; /* Not a clickable signup */
+  box-shadow: none; /* Remove hover shadow for internal */
 }
 
-.event-toggle-icon.expanded {
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+.signup-btn:hover:not(.internal-btn) {
+  background-color: #4CAF50; /* Lighter green on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 200, 0, 0.3);
+}
+
+.no-events-message {
+  font-style: italic;
+  color: #777;
+  background-color: #e9e9e9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 1rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Media Queries for Responsiveness (Optional but recommended) */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 15px;
+  }
+  .page-container h1 {
+    font-size: 2rem;
+  }
+  .event-header h2 {
+    font-size: 1.3rem;
+  }
 }
 
 
