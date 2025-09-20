@@ -1,3 +1,4 @@
+
 /* General Body Styles */
 body {
   font-family: 'Arial', sans-serif;
@@ -207,178 +208,84 @@ position: fixed; /* This is the key to making it float */
 }
 
 
-/* --- General Page Container for both Upcoming Events and Achievements --- */
-.page-container {
-  padding: 20px;
-  max-width: 1000px;
-  margin: 80px auto 20px auto; /* Adjust top margin if fixed navbar */
-  background-color: #f0f2f5; /* Light background for the page content */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.page-container h1 {
-  font-size: 2.5rem;
-  color: #285A00; /* Neelvardhan green */
-  text-align: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 2px solid #5E9211;
-}
-
-.page-container p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #444;
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-/* --- Category Section Styling (for both pages) --- */
-.event-category-section,
-.achievement-category-section {
-  margin-bottom: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e0e0e0;
-}
-
-.event-category-section:first-of-type,
-.achievement-category-section:first-of-type {
-  border-top: none; /* No top border for the first category */
-}
-
-.event-category-section h2,
-.achievement-category-section h2 {
-  font-size: 2rem;
-  color: #285A00; /* Neelvardhan green */
-  margin-bottom: 1.5rem;
-  padding-left: 10px;
-  border-left: 5px solid #5E9211;
-}
-
-/* --- Event Card Styling (Upcoming Events) --- */
+/* Update the main event card for new toggle icon positioning */
 .event-card {
-  background-color: #2a2a2a; /* Dark background for cards */
-  color: #f0f0f0;
+  position: relative; /* Needed for absolute positioning of toggle icon */
+  background: #fff;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
-.event-card.internal-event {
-  border-left: 5px solid #ffc107; /* Orange/Yellow border for internal events */
-  background-color: #383838; /* Slightly different background */
-}
-
-.event-header {
-  padding: 1.2rem 1.5rem;
-  cursor: pointer;
+/* Update the header to align items */
+.event-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #444;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee; /* Add a subtle line */
 }
 
-.event-header h2 {
-  font-size: 1.6rem;
+.event-card-header h3 {
   margin: 0;
-  color: #f0f0f0;
-  border-left: none; /* Override category h2 border */
+  color: #333;
 }
 
-.event-info p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #bbb;
-  text-align: left; /* Align text within info block */
+.event-card-header p {
+  margin: 0.25rem 0 0;
+  color: #555;
+  font-size: 0.9rem;
 }
 
-.dropdown-arrow {
-  font-size: 1.2rem;
-  margin-left: 1rem;
-}
-
-.event-details {
-  padding: 1.5rem;
-  padding-top: 0.5rem; /* Less padding at top since it follows header */
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-.event-details p {
-  margin-bottom: 0.8rem;
-  color: #ccc;
-  text-align: left;
-}
-
-.event-details p strong {
-  color: #eee;
-}
-
-.signup-btn {
+/* Styling for the NEW "Sign Up" button in the header */
+.signup-button-header {
   display: inline-block;
-  background-color: #28a745; /* Green button */
+  padding: 8px 16px; /* Made smaller to fit the header */
+  background-color: #007bff;
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 1rem;
-  border: none; /* Ensure no default button border */
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin-left: 1rem; /* Adds space between text and button */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.signup-button-header:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the body content */
+.event-card-body {
+  padding: 1.5rem;
+  padding-top: 2.5rem; /* Add extra padding at the top for the up-arrow */
+  position: relative;
+}
+
+/* Styling for the NEW professional toggle icons (chevrons) */
+.event-toggle-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #28a745; /* Your theme green */
   cursor: pointer;
 }
 
-.signup-btn.internal-btn {
-  background-color: #ffc107; /* Orange for internal events */
-  color: #333;
-  cursor: default; /* Indicate it's not clickable for signup */
+.event-toggle-icon.collapsed {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.signup-btn:hover:not(.internal-btn) {
-  background-color: #218838;
-  transform: translateY(-2px);
+.event-toggle-icon.expanded {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.no-events-message,
-.no-achievements-message {
-  font-style: italic;
-  color: #777;
-  background-color: #e9e9e9;
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  margin-top: 1rem;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-}
-
-/* --- Achievement Card Styling (Achievements Page) --- */
-.achievement-card {
-  background-color: #ffffff; /* Lighter background for achievements */
-  border-left: 5px solid #5E9211; /* Green accent */
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.achievement-card h3 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.achievement-card p {
-  line-height: 1.6;
-  color: #555;
-  text-align: left;
-}
-
-.achievement-card p strong {
-  color: #333;
-}
 
 /* Add this at the end of your CSS file */
 
