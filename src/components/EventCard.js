@@ -1,7 +1,7 @@
 // src/components/EventCard.js
 import React from 'react';
 // Assuming you have a CSS file for EventCard specific styles if not in global CSS
-// import './EventCard.css'; 
+// import './style.css'; 
 
 const EventCard = ({ event, isExpanded, onHeaderClick }) => {
   return (
