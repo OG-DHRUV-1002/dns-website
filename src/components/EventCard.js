@@ -1,14 +1,16 @@
 // src/components/EventCard.js
 import React from 'react';
-// Assuming you have a CSS file for EventCard specific styles if not in global CSS
-// import '../styles.css'; 
+// Assuming main styles.css handles .event-card, .signup-btn etc.
 
 const EventCard = ({ event, isExpanded, onHeaderClick }) => {
   return (
+    // Your original card design implies a dark background for the card
+    // and bright text. The classes '.event-card' and '.internal-event'
+    // will control this via styles.css.
     <div className={`event-card ${isExpanded ? 'expanded' : ''} ${event.isInternal ? 'internal-event' : ''}`}>
-      <div className="event-header" onClick={() => onHeaderClick(event.id)}> {/* Use event.id */}
+      <div className="event-header" onClick={() => onHeaderClick(event.id)}>
         <h2>{event.title}</h2>
-        <div className="event-info">
+        <div className="event-info-summary"> {/* New class for event summary container */}
           <p>📅 Date: {event.date}</p>
           <p>🕖 Time: {event.time}</p>
           <span className="dropdown-arrow">{isExpanded ? '▲' : '▼'}</span>
@@ -16,7 +18,7 @@ const EventCard = ({ event, isExpanded, onHeaderClick }) => {
       </div>
       {isExpanded && (
         <div className="event-details">
-          <p>🤝🏼 In partnership with: {event.partners}</p> {/* Use 'partners' */}
+          <p>🤝🏼 In partnership with: {event.ngo}</p> {/* Reverted to 'ngo' */}
           <p>📍 Location: {event.location}</p>
           <p>💁🏻 Description: {event.description}</p>
           {event.isInternal ? (
