@@ -355,7 +355,7 @@ position: fixed; /* This is the key to making it float */
   /* Make card more square-like, but still flexible */
   aspect-ratio: 1 / 1; /* This makes the card explicitly square */
   /* Or if you prefer a fixed height: height: 300px; */
-  min-width: 250px; /* Ensure it doesn't get too small */
+  min-width: 25px; /* Ensure it doesn't get too small */
 }
 
 .achievement-card:hover {
