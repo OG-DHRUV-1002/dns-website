@@ -43,13 +43,13 @@ const Achievements = () => {
     'Community Teachings / Skill-Based Events': [],
   };
 
-  const openImageModal = (title, images) => {
+const openImageModal = (title, images) => {
     setCurrentEventTitle(title);
     setCurrentImages(images);
     setIsModalOpen(true);
   };
 
-  const closeImageModal = () => {
+  const closeImageModal = () => { // This is the defined function
     setIsModalOpen(false);
   };
 
@@ -66,19 +66,16 @@ const Achievements = () => {
           {events.length > 0 ? (
             <div className="achievements-grid">
               {events.map((event) => (
-                <div 
-                  key={event.id} 
-                  className="achievement-card" 
+                <div
+                  key={event.id}
+                  className="achievement-card"
                   onClick={() => openImageModal(event.title, event.images)}
                 >
-                   {/* --- CRITICAL CHANGE HERE: Using an <img> tag for the banner --- */}
                   <img
                     src={event.images.length > 0 ? event.images[0] : '/images/placeholder.jpg'}
                     alt={`Banner for ${event.title}`}
-                    className="achievement-card-banner-img" // New class for styling
+                    className="achievement-card-banner-img"
                   />
-                  {/* --- END CRITICAL CHANGE --- */}
-
                   <div className="achievement-card-content">
                     <h3>{event.title}</h3>
                     <p>{event.date}</p>
@@ -96,7 +93,7 @@ const Achievements = () => {
       {isModalOpen && (
         <div className="image-modal-overlay" onClick={closeImageModal}>
           <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-modal-btn" onClick={closeModal}>&times;</button>
+            <button className="close-modal-btn" onClick={closeImageModal}>&times;</button> {/* <--- CHANGE IS HERE */}
             <h3>{currentEventTitle}</h3>
             <div className="modal-images-container">
               {currentImages.map((src, index) => (
