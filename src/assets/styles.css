@@ -329,7 +329,7 @@ position: fixed; /* This is the key to making it float */
 .achievements-grid {
   display: grid;
   /* Adjust grid columns to be more flexible and responsive, aiming for ~3 per row on desktop */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Min 250px wide, fills space */
+  grid-template-columns: repeat(auto-fit, minmax(25px, 1fr)); /* Min 250px wide, fills space */
   gap: 2rem; /* Spacing between cards */
 }
 
@@ -371,7 +371,7 @@ position: fixed; /* This is the key to making it float */
   background-repeat: no-repeat;
   border-bottom: 1px solid #eee; /* Optional: A subtle line below the image */
   /* You might want a minimum height for the image preview */
-  min-height: 150px; /* Adjust as needed */
+  min-height: 15px; /* Adjust as needed */
 }
 
 .achievement-card-content {
@@ -405,7 +405,7 @@ position: fixed; /* This is the key to making it float */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
+  z-index: 200;
 }
 
 .image-modal-content {
