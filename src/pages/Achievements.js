@@ -95,8 +95,7 @@ const Achievements = () => {
             <h3>{currentEventTitle}</h3>
             <div className="modal-images-container">
               {currentImages.map((src, index) => (
-                <img key={index} src={src} alt={`${currentEventTitle} - Image ${index + 1}`} />
-              ))}
+<img key={index} src={src} alt={currentEventTitle} />              ))}
             </div>
           </div>
         </div>
