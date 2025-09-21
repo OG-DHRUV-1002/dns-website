@@ -239,6 +239,31 @@ position: fixed; /* This is the key to making it float */
   font-size: 0.9rem;
 }
 
+/* --- Category Section Styling (for Upcoming Events & Achievements) --- */
+
+.event-category-section {
+  margin-top: 3rem; /* Spacing between categories */
+}
+
+.category-title {
+  font-size: 2rem;
+  color: #285A00; /* A professional, dark green */
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #5E9211; /* Accent line */
+  display: inline-block; /* Ensures border only spans the text width */
+}
+
+/* A simple message for categories with no events */
+.no-events-message {
+  font-style: italic;
+  color: #777;
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
 /* Styling for the NEW "Sign Up" button in the header */
 .signup-button-header {
   display: inline-block;
