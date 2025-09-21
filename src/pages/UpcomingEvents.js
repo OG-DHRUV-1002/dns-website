@@ -1,13 +1,14 @@
 // src/pages/UpcomingEvents.js
 import React, { useState } from 'react';
 import EventCard from '../components/EventCard';
-// Ensure you have a CSS file for category headers if needed, or add to a global file.
+// Ensure your styles.css is imported globally or here if necessary
 // import '../../assets/styles.css'; 
 
 const UpcomingEvents = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
-
-  // --- NEW: Events are now organized by category ---
+  const [expandedEventId, setExpandedEventId] = useState(null); // Tracks expanded card by its unique ID
+  const [selectedCategory, setSelectedCategory] = useState('All Options');
+  
+// --- NEW: Events are now organized by category ---
   const categorizedEvents = {
     'Beach Clean-Up Drives': [
       {
@@ -55,36 +56,95 @@ const UpcomingEvents = () => {
     ],
   };
 
-  const handleCardClick = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+    const handleCardClick = (id) => {
+    setExpandedEventId(expandedEventId === id ? null : id);
   };
+
+  // NEW: Function to handle filter change
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+    setExpandedEventId(null); // Close any open cards when filter changes
+  };
+
+  // Get all unique category names for the filter dropdown
+  const categories = ['All Options', ...Object.keys(categorizedEvents)];
 
   return (
     <div className="page-container">
       <h1 style={{color: '#5E9211' }}>Upcoming Events</h1>
       <p>Here are the opportunities where you can join us to make an impact. Click on an event to see more details.</p>
 
-      {/* --- NEW: Map through each category --- */}
-      {Object.entries(categorizedEvents).map(([category, events]) => (
-        <section key={category} className="event-category-section">
-          <h2 className="category-title">{category}</h2>
-          {events.length > 0 ? (
-            <div className="events-list">
-              {events.map((event, index) => (
-                <EventCard 
-                  key={event.id}
-                  event={event}
-                  isExpanded={expandedIndex === event.id}
-                  onHeaderClick={() => handleCardClick(event.id)}
-                />
-              ))}
-            </div>
-          ) : (
-            <p className="no-events-message">No upcoming {category.toLowerCase()} at the moment. Stay tuned!</p>
-          )}
-        </section>
-      ))}
+      {/* NEW: Filter Dropdown */}
+      <div className="filter-container">
+        <label htmlFor="category-filter" className="filter-label">Filter by Category:</label>
+        <select
+          id="category-filter"
+          className="category-select"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+        >
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {Object.entries(categorizedEvents).map(([category, events]) => {
+        // Only render the category section if it's selected OR "All Options" is selected
+        if (selectedCategory === 'All Options' || selectedCategory === category) {
+          const filteredEvents = events.filter(event => 
+            // This inner filter ensures only events of the selected category are shown
+            selectedCategory === 'All Options' || categorizedEvents[selectedCategory].some(e => e.id === event.id)
+          );
+
+          if (filteredEvents.length === 0) {
+            // Display message if no events in the selected (or current) category
+            return (
+              <section key={category} className="event-category-section">
+                <h2 className="category-title">{category}</h2>
+                <p className="no-events-message">No upcoming {category.toLowerCase()} at the moment. Stay tuned!</p>
+              </section>
+            );
+          }
+
+          // Render category title and its events
+          return (
+            <section key={category} className="event-category-section">
+              <h2 className="category-title">{category}</h2>
+              <div className="events-list">
+                {filteredEvents.map((event) => (
+                  <EventCard 
+                    key={event.id} // Use unique ID for key
+                    event={event}
+                    isExpanded={expandedEventId === event.id}
+                    onHeaderClick={() => handleCardClick(event.id)}
+                  />
+                ))}
+              </div>
+            </section>
+          );
+        }
+        return null; // Don't render if not selected
+      })}
       
+      {/* Optional: Message if "All Options" is selected but all categories are empty */}
+      {selectedCategory === 'All Options' && 
+       Object.values(categorizedEvents).every(events => events.length === 0) && (
+         <p className="no-events-message">No upcoming events across all categories at the moment. Stay tuned!</p>
+       )}
+
+      {/* Optional: Message for a specific category selected, but it has no events (redundant if handled above but good for clarity) */}
+      {selectedCategory !== 'All Options' && 
+       categorizedEvents[selectedCategory] && 
+       categorizedEvents[selectedCategory].length === 0 && (
+         <section className="event-category-section">
+            <h2 className="category-title">{selectedCategory}</h2>
+            <p className="no-events-message">No upcoming {selectedCategory.toLowerCase()} at the moment. Stay tuned!</p>
+         </section>
+      )}
+
     </div>
   );
 };
