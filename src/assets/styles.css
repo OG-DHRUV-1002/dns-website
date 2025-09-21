@@ -329,7 +329,7 @@ position: fixed; /* This is the key to making it float */
 .achievements-grid {
   display: grid;
   /* Adjust grid columns to be more flexible and responsive, aiming for ~3 per row on desktop */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Min 250px wide, fills space */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min 250px wide, fills space */
   gap: 2rem; /* Spacing between cards */
 }
 
@@ -344,22 +344,20 @@ position: fixed; /* This is the key to making it float */
 
 /* --- Achievement Card Styling (MODIFIED) --- */
 .achievement-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #fff; /* White background */
+  border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
+  overflow: hidden; /* Ensure image doesn't overflow */
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
   text-align: center; /* Center text */
-  padding: 1.5rem; /* Padding inside the card */
-  height: auto; /* Allow height to adjust based on content */
-  aspect-ratio: unset; /* Remove fixed aspect ratio */
+  padding: 0; /* No padding directly on card, it's in content area */
+  height: auto;
+  aspect-ratio: 3 / 4; /* <-- NEW: This sets the width:height ratio (e.g., 300px wide, 400px tall) */
   min-width: 250px;
-  max-width: 350px; /* Limit max width for consistency with homepage */
-  justify-content: space-between; /* Push image and content apart if needed */
+  max-width: 350px; /* Maintain consistent max width */
 }
 
 .achievement-card:hover {
@@ -369,24 +367,27 @@ position: fixed; /* This is the key to making it float */
 
 .achievement-card-image-preview {
   /* This will be the banner/poster image */
-  flex-grow: 1; /* Allow image preview to take up available space */
+  width: 100%; /* Spans the full width of the card */
+  height: 60%; /* <-- NEW: Image takes 60% of the card's height */
   background-size: cover; /* Ensures image covers the area */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat;
-  border-bottom: 1px solid #eee; /* Optional: A subtle line below the image */
-  /* You might want a minimum height for the image preview */
-  min-height: 15px; /* Adjust as needed */
+  border-bottom: 1px solid #eee; /* A subtle line below the image */
+  flex-shrink: 0; /* Prevents image from shrinking */
 }
 
 .achievement-card-content {
-  padding: 1rem 1.2rem;
+  padding: 1rem 1.2rem; /* Padding for the text content */
   text-align: center;
-  flex-shrink: 0; /* Prevents content from shrinking */
+  flex-grow: 1; /* Allow content to take up remaining space */
+  display: flex; /* Use flex to center text vertically if needed */
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
   background-color: #f9f9f9; /* Slightly different background for content area */
 }
 
 .achievement-card h3 {
-  margin: 0.5rem 0 0.2rem; /* Adjusted margins */
+  margin: 0.5rem 0 0.2rem;
   font-size: 1.25rem;
   color: #333;
 }
