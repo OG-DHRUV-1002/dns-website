@@ -94,7 +94,8 @@ style={{ backgroundImage: `url(${event.images.length > 0 ? event.images[0] : '/i
             <h3>{currentEventTitle}</h3>
             <div className="modal-images-container">
               {currentImages.map((src, index) => (
-<img key={index} src={src} alt={currentEventTitle} />              ))}
+                <img key={index} src={src} alt={`${currentEventTitle} ${index + 1}`} />
+              ))}
             </div>
           </div>
         </div>
