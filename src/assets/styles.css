@@ -264,6 +264,67 @@ position: fixed; /* This is the key to making it float */
   text-align: center;
 }
 
+/* --- New: Styles for the Category Filter Dropdown --- */
+
+.filter-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns the filter to the right */
+  align-items: center;
+  margin-bottom: 2rem; /* Space below the filter before categories start */
+  gap: 1rem; /* Space between the label and the select box */
+  padding-right: 10px; /* Small padding from the right edge */
+}
+
+.filter-label {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: bold;
+}
+
+.category-select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  appearance: none; /* Removes default browser styling for dropdown */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-5.4H18.2c-4.1%200-8.1%201.7-11%204.6l-5.6%205.6c-3.5%203.5-3.5%209.2%200%2012.7l126.9%20126.9c3.5%203.5%209.2%203.5%2012.7%200l126.9-126.9c2.8-2.9%204.5-6.9%204.5-11z%22%2F%3E%3C%2Fsvg%3E'); /* Custom dropdown arrow (black) */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position the arrow */
+  background-size: 12px; /* Size of the arrow */
+  min-width: 180px; /* Ensure sufficient width */
+}
+
+.category-select:focus {
+  outline: none;
+  border-color: #5E9211; /* Highlight with your theme green on focus */
+  box-shadow: 0 0 0 2px rgba(94, 146, 17, 0.2); /* Subtle glow on focus */
+}
+
+/* You might want to adjust the top margin for the first category section
+   to reduce space if the filter takes up too much.
+   If .event-category-section has a top margin, the first one might need less.
+   Consider adding:
+*/
+.event-category-section:first-of-type {
+  margin-top: 2rem; /* Slightly less space for the first category if a filter is above it */
+}
+
+/* And for mobile, let's make the filter full width */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column; /* Stack label and select vertically */
+    align-items: flex-start; /* Align to the left on mobile */
+    padding-left: 10px; /* Add some padding on the left */
+  }
+  .category-select {
+    width: 100%; /* Full width on mobile */
+    min-width: unset; /* Remove min-width restriction */
+  }
+}
+
 /* Styling for the NEW "Sign Up" button in the header */
 .signup-button-header {
   display: inline-block;
