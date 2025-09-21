@@ -312,36 +312,6 @@ position: fixed; /* This is the key to making it float */
   margin-top: 2rem; /* Slightly less space for the first category if a filter is above it */
 }
 
-/* --- Achievements Page: Category & Grid Styling (Minor Adjustments) --- */
-.achievement-category {
-  margin-top: 3rem;
-}
-
-.category-title {
-  font-size: 2rem;
-  color: #285A00; /* Dark Green */
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid #5E9211;
-  display: inline-block;
-}
-
-.achievements-grid {
-  display: grid;
-  /* Adjust grid columns for 3 per row on desktop, smaller on mobile */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min 280px wide, fills space */
-  gap: 2rem; /* Spacing between cards */
-  justify-content: center; /* Center cards if there are fewer than a full row */
-}
-
-.no-achievements-message {
-  font-style: italic;
-  color: #777;
-  background-color: #f0f0f0;
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-}
 
 /* --- Achievements Page: Category & Grid Styling --- */
 .achievement-category {
@@ -359,7 +329,6 @@ position: fixed; /* This is the key to making it float */
 
 .achievements-grid {
   display: grid;
-  /* Columns for a visually pleasing grid with this new card size */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Min card width 300px */
   gap: 2rem;
   justify-content: center; /* Center cards if there are fewer than a full row */
@@ -374,7 +343,7 @@ position: fixed; /* This is the key to making it float */
   text-align: center;
 }
 
-/* --- Achievement Card Styling (MATCHING THE SCREENSHOT) --- */
+/* --- Achievement Card Styling --- */
 .achievement-card {
   background: #fff; /* White background for the main card */
   border-radius: 10px; /* Slightly rounded corners for the card */
@@ -383,16 +352,13 @@ position: fixed; /* This is the key to making it float */
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column; /* Stack image preview and content vertically */
+  flex-direction: column; /* Stack image and content vertically */
   text-align: center; /* Center text */
   padding: 0; /* No padding on the card itself, inner content handles it */
 
-  /* Make card flexible but with a reasonable base size */
   width: 100%; /* Take full width of its grid column */
   max-width: 350px; /* Limit maximum width for consistency */
   height: auto; /* Height determined by content */
-  /* Remove any explicit aspect-ratio from the card itself for responsiveness */
-  /* aspect-ratio: unset; */
 }
 
 .achievement-card:hover {
@@ -400,34 +366,50 @@ position: fixed; /* This is the key to making it float */
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.achievement-card-image-preview {
-  /* This is the full-width banner image at the top */
-  width: 100%; /* Spans the full width of the card */
-  /* The screenshot suggests a vertical rectangular image (like 3:4 or 2:3) */
-  /* Use padding-top for consistent aspect ratio of the image area */
-  position: relative; /* Needed for padding-top trick */
-  padding-top: calc(4 / 3 * 100%); /* Adjust this for the image's aspect ratio (height is 4/3 of width) */
-  /* If your image is wider than tall (e.g., 16:9), use padding-top: calc(9 / 16 * 100%); */
+/* --- NEW CLASS FOR THE <img> BANNER TAG --- */
+.achievement-card-banner-img {
+  width: 100%; /* Make the image fill the width of its parent card */
+  height: auto; /* Maintain image aspect ratio */
+  display: block; /* Remove any extra space below the image */
+  object-fit: cover; /* This crops the image to fit the dimensions, similar to background-size: cover */
+  /*
+    The image in your screenshot looks like a vertical rectangle.
+    If you want to enforce a specific aspect ratio for this img tag,
+    you can wrap it in a div and apply aspect-ratio or padding-top to the div.
+    But for flexibility and responsive behavior, often just `width: 100%; height: auto; object-fit: cover;` is best.
+    If images are not all the same ratio, `object-fit: cover` will crop them to fill the space.
+  */
+  max-height: 300px; /* Optional: Set a max height to prevent very tall banners */
+  /* Remove background properties, min-height, padding-top, position, etc. from here */
+  /* border: 2px dashed red; */ /* Remove this temporary debug border */
+}
 
-  background-size: cover; /* Ensures image covers the area */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat;
-  flex-shrink: 0; /* Prevents image from shrinking */
-  /* No border-bottom for a cleaner look as per screenshot, unless you want it */
+/* --- Re-purposing the old div. No longer used for the banner image itself --- */
+/* If you want to keep the outer div for a border or a placeholder, you can,
+   but for the screenshot layout, a direct `<img>` is cleaner.
+   If you absolutely need a div around the img, you can use:
+   <div className="achievement-card-image-wrapper">
+     <img src="..." className="achievement-card-banner-img" />
+   </div>
+   And then style `.achievement-card-image-wrapper`
+*/
+.achievement-card-image-preview { /* This class is now unused in HTML, can be deleted or repurposed */
+  /* If you want a div around the image for a specific styling need (e.g., placeholder background),
+     then uncomment and adapt these styles for `.achievement-card-image-wrapper` instead. */
 }
 
 .achievement-card-content {
-  padding: 1.5rem 1rem; /* Padding for the text content below the image */
+  padding: 1.5rem 1rem;
   text-align: center;
-  flex-grow: 1; /* Allows content to take up remaining vertical space */
-  display: flex; /* Flexbox for centering title/date */
+  flex-grow: 1;
+  display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center content if extra space */
-  background-color: #f9f9f9; /* Subtle light gray background for content area */
+  justify-content: center;
+  background-color: #f9f9f9;
 }
 
 .achievement-card h3 {
-  margin: 0 0 0.2rem 0; /* Adjusted margins */
+  margin: 0 0 0.2rem 0;
   font-size: 1.25rem;
   color: #333;
 }
@@ -438,7 +420,6 @@ position: fixed; /* This is the key to making it float */
   font-size: 0.9rem;
 }
 
-
 /* --- Image Modal (Pop-up) Styling (remains the same) --- */
 .image-modal-overlay {
   position: fixed;
@@ -491,56 +472,11 @@ position: fixed; /* This is the key to making it float */
   border-radius: 5px;
 }
 
-/* --- Image Modal (Pop-up) Styling (remains the same) --- */
-.image-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.image-modal-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 90vw;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  text-align: center;
-}
-
-.close-modal-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 2.5rem;
-  color: #555;
-  background: none;
-  border: none;
-  cursor: pointer;
-  line-height: 1;
-}
-
-.modal-images-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-.modal-images-container img {
-  max-width: 100%;
-  height: auto;
-  max-height: 70vh;
-  border-radius: 5px;
+/* --- Responsive Adjustments for smaller screens --- */
+@media (max-width: 600px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* And for mobile, let's make the filter full width */
