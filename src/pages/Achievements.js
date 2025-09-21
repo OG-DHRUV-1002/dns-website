@@ -17,6 +17,7 @@ const Achievements = () => {
         title: 'Juhu Silver Beach Cleanup',
         date: 'September 20, 2025',
         images: [
+'images/achievements/Juhu-Silver-Beach-Achieved/Banner Juhu Silver Beach.jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (1).jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (2).jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (3).jpeg',
