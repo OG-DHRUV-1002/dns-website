@@ -71,7 +71,8 @@ const Achievements = () => {
                   className="achievement-card" 
                   onClick={() => openImageModal(event.title, event.images)}
                 >
-                  <div className="achievement-card-image-preview"style={{ backgroundImage: `url(${event.images.length > 0 ? event.images[0] : '/images/placeholder.jpg'})` }}></div>
+                  <div className="achievement-card-image-preview"
+style={{ backgroundImage: `url(${event.images.length > 0 ? event.images[0] : '/images/placeholder.jpg'})` }}></div>
                   <div className="achievement-card-content">
                     <h3>{event.title}</h3>
                     <p>{event.date}</p>
