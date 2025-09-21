@@ -34,13 +34,7 @@ const Achievements = () => {
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (15).jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (16).jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (17).jpeg',
-'images/achievements/Juhu-Silver-Beach-Achieved/silver (18).jpeg',
-'images/achievements/Juhu-Silver-Beach-Achieved/silver (5).mp4',
-'images/achievements/Juhu-Silver-Beach-Achieved/silver (2).mp4',
-'images/achievements/Juhu-Silver-Beach-Achieved/silver (3).mp4',
-'images/achievements/Juhu-Silver-Beach-Achieved/silver (1).mp4',
-
-
+'images/achievements/Juhu-Silver-Beach-Achieved/silver (18).jpeg'
         ],
       },
       // { id: 'carter-cleanup-achieved', title: 'Carter Road Cleanup', date: 'October 04, 2025', images: [...] },
