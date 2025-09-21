@@ -20,7 +20,7 @@ const Achievements = () => {
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (1).jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (2).jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (3).jpeg',
-'images/achievements/Juhu-Silver-Beach-Achieved/silver (4).jpeg',
+'images/achievements/Juhu-Silver-Beach-Achieved/silver (1).mp4',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (5).jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (6).jpeg',
 'images/achievements/Juhu-Silver-Beach-Achieved/silver (7).jpeg',
