@@ -312,7 +312,7 @@ position: fixed; /* This is the key to making it float */
   margin-top: 2rem; /* Slightly less space for the first category if a filter is above it */
 }
 
-/* --- Achievements Page: Category & Grid Styling --- */
+/* --- Achievements Page: Category & Grid Styling (Minor Adjustments) --- */
 .achievement-category {
   margin-top: 3rem;
 }
@@ -328,9 +328,10 @@ position: fixed; /* This is the key to making it float */
 
 .achievements-grid {
   display: grid;
-  /* Adjust grid columns to be more flexible and responsive, aiming for ~3 per row on desktop */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min 250px wide, fills space */
+  /* Adjust grid columns for 3 per row on desktop, smaller on mobile */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min 280px wide, fills space */
   gap: 2rem; /* Spacing between cards */
+  justify-content: center; /* Center cards if there are fewer than a full row */
 }
 
 .no-achievements-message {
@@ -342,20 +343,19 @@ position: fixed; /* This is the key to making it float */
   text-align: center;
 }
 
-/* --- Achievement Card Styling (MODIFIED) --- */
+/* --- Achievement Card Styling (MODIFIED for 3:4 rectangle with RECTANGULAR banner) --- */
 .achievement-card {
-  background: #fff; /* White background */
-  border-radius: 10px; /* Rounded corners */
+  background: #fff; /* White background for the main card */
+  border-radius: 10px; /* Slightly rounded corners for the card */
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden; /* Ensure image doesn't overflow */
+  overflow: hidden; /* Ensures image and content stay within rounded corners */
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack image preview and content */
   text-align: center; /* Center text */
-  padding: 0; /* No padding directly on card, it's in content area */
-  height: auto;
-  aspect-ratio: 3 / 4; /* <-- NEW: This sets the width:height ratio (e.g., 300px wide, 400px tall) */
+  padding: 0; /* No padding on the card itself, managed by inner divs */
+  aspect-ratio: 3 / 4; /* <-- This sets the main card to 3:4 aspect ratio (width:height) */
   min-width: 250px;
   max-width: 350px; /* Maintain consistent max width */
 }
@@ -366,24 +366,26 @@ position: fixed; /* This is the key to making it float */
 }
 
 .achievement-card-image-preview {
-  /* This will be the banner/poster image */
+  /* Rectangular banner image styling */
   width: 100%; /* Spans the full width of the card */
-  height: 60%; /* <-- NEW: Image takes 60% of the card's height */
+  /* Using aspect-ratio for the image preview as well to make it 3:4 relative to its width */
+  aspect-ratio: 3 / 4; /* <-- NEW: This sets the banner image to a 3:4 aspect ratio */
   background-size: cover; /* Ensures image covers the area */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat;
   border-bottom: 1px solid #eee; /* A subtle line below the image */
   flex-shrink: 0; /* Prevents image from shrinking */
+  /* Remove height property here as aspect-ratio handles it based on width */
 }
 
 .achievement-card-content {
   padding: 1rem 1.2rem; /* Padding for the text content */
   text-align: center;
-  flex-grow: 1; /* Allow content to take up remaining space */
-  display: flex; /* Use flex to center text vertically if needed */
+  flex-grow: 1; /* Allow content to take up remaining vertical space */
+  display: flex; /* Use flex to center text vertically if desired */
   flex-direction: column;
   justify-content: center; /* Center vertically */
-  background-color: #f9f9f9; /* Slightly different background for content area */
+  background-color: #f9f9f9; /* Subtle light gray background for content area */
 }
 
 .achievement-card h3 {
@@ -410,7 +412,7 @@ position: fixed; /* This is the key to making it float */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 200;
+  z-index: 2000;
 }
 
 .image-modal-content {
@@ -450,7 +452,6 @@ position: fixed; /* This is the key to making it float */
   max-height: 70vh;
   border-radius: 5px;
 }
-
 
 /* And for mobile, let's make the filter full width */
 @media (max-width: 768px) {
