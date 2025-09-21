@@ -1,23 +1,93 @@
 // src/pages/Achievements.js
-import React from 'react';
-import FloatingRegisterButton from '../components/FloatingRegisterButton'; // <-- 1. Import the new component
+import React, { useState } from 'react';
+import FloatingRegisterButton from '../components/FloatingRegisterButton';
+// import '../../assets/styles.css'; // Ensure your main CSS is imported, if not globally
 
 const Achievements = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImages, setCurrentImages] = useState([]);
+  const [currentEventTitle, setCurrentEventTitle] = useState('');
+
+  // --- CATEGORIZED ACHIEVEMENTS DATA ---
+  // As you complete events, add them here with their image URLs
+  const categorizedAchievements = {
+    'Beach Clean-Up Drives': [
+      {
+        id: 'juhu-cleanup-achieved',
+        title: 'Juhu Silver Beach Cleanup',
+        date: 'September 20, 2025',
+        images: [
+          '/images/achievements/juhu-1.jpg', // Replace with your actual image paths
+          '/images/achievements/juhu-2.jpg',
+          '/images/achievements/juhu-3.jpg',
+        ],
+      },
+      // { id: 'carter-cleanup-achieved', title: 'Carter Road Cleanup', date: 'October 04, 2025', images: [...] },
+    ],
+    'Restoration Drives': [],
+    'Donation Drives': [],
+    'Environmental Awareness Campaigns': [],
+    'Community Teachings / Skill-Based Events': [],
+  };
+
+  const openImageModal = (title, images) => {
+    setCurrentEventTitle(title);
+    setCurrentImages(images);
+    setIsModalOpen(true);
+  };
+
+  const closeImageModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="page-container">
       <h1 style={{color: '#5E9211' }}>Our Impact Journey</h1>
       <p>
-        As a newly formed voluntary club, our journey to create a tangible impact is just beginning! We are incredibly excited about the future and are actively planning our first series of high-impact events with our partner NGOs.
+        As a newly formed voluntary club, our journey to create a tangible impact is just beginning! Click on any completed event below to see the difference our dedicated volunteers have made.
       </p>
-      
-      {/* This is the new "In Progress" section */}
-      <div className="in-progress-notice">
-        <h2>Stay Tuned - Achievements In Progress!</h2>
-        <p>
-          This is where we will proudly showcase the results of our beach clean-ups, tree plantation drives, and community campaigns. Check back soon to see the difference our dedicated volunteers are making. Our first events are right around the corner!
-        </p>
-      </div>
-  <FloatingRegisterButton /> 
+
+      {Object.entries(categorizedAchievements).map(([category, events]) => (
+        <section key={category} className="achievement-category">
+          <h2 className="category-title">{category}</h2>
+          {events.length > 0 ? (
+            <div className="achievements-grid">
+              {events.map((event) => (
+                <div 
+                  key={event.id} 
+                  className="achievement-card" 
+                  onClick={() => openImageModal(event.title, event.images)}
+                >
+                  <div className="achievement-card-image-preview" style={{backgroundImage: `url(${event.images[0]})`}}></div>
+                  <div className="achievement-card-content">
+                    <h3>{event.title}</h3>
+                    <p>{event.date}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="no-achievements-message">No completed achievements in this category yet. Stay tuned!</p>
+          )}
+        </section>
+      ))}
+
+      {/* --- IMAGE MODAL (POP-UP) --- */}
+      {isModalOpen && (
+        <div className="image-modal-overlay" onClick={closeImageModal}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal-btn" onClick={closeImageModal}>&times;</button>
+            <h3>{currentEventTitle}</h3>
+            <div className="modal-images-container">
+              {currentImages.map((src, index) => (
+                <img key={index} src={src} alt={`${currentEventTitle} - Image ${index + 1}`} />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <FloatingRegisterButton />
     </div>
   );
 };
