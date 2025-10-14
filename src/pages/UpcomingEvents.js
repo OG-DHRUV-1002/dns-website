@@ -25,7 +25,7 @@ const UpcomingEvents = () => {
         id: 'carter-cleanup-2025',
         title: 'Carter Beach Road Cleanup',
         ngo: 'Ek Saath - The Earth Foundation',
-        date: 'Saturday, October 11, 2025',
+        date: 'Saturday, November 15, 2025',
         time: "7:30 AM – 9:30 AM",
         location: "Carter Road, Bandra(West)",
         description: 'ConnectFor invites you to join us for a clean-up drive at Carter Road, Mumbai in collaboration with our partner Carter CleanUp, and Ek Saath - The Earth Foundation. Carter Road for years has been a garbage dump for all sorts of plastic, tins, cans, and even food waste – dumped near the sea and park. It takes away from the scenic view and area all residents should access. Let us all together create awareness about the environment & sustainability and create a difference by volunteering in this cleanup drive. Volunteers will be collecting plastic bottles, bags, bottle caps, waste, and garbage off the Carter Road beach. Volunteers will be provided with the necessary cleaning equipment by the NGO on the day of the activity.',
