@@ -1,0 +1,11 @@
+[[plugins]]
+package = "netlify-plugin-sitemap"
+
+  [plugins.inputs]
+  # Add all your site's pages here
+  extra_paths = [
+    "/about",
+    "/upcoming-events",
+    "/achievements",
+    "/contact"
+  ]
