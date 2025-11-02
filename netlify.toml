@@ -1,0 +1,7 @@
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+  exclude = []
+  prettyURLs = true
+  trailingSlash = false
